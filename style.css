@@ -1,0 +1,15 @@
+html{
+    background-color: #300035;
+    font-family: "Bitter", sans-serif;
+}
+
+heading-1{
+    color: white;
+    text-align: center;
+}
+
+main-body{
+    background-color: #57015e;
+    padding: 10px;
+    border-radius: 50px;
+}
