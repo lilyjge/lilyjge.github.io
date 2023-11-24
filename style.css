@@ -3,9 +3,10 @@ html{
     font-family: "Bitter", sans-serif;
 }
 
-heading-1{
+.heading-1{
     color: white;
     text-align: center;
+    padding: 100px;
 }
 
 main-body{
