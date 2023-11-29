@@ -1,18 +1,18 @@
 html{
-    background-color: #FFF5E4;
-    font-family: "Open Sans", sans-serif;
+    background-color: #FCF5EE;
+    font-family: "Archivo", sans-serif;
 }
 
 .heading-1{
     color: #EE6983;
     text-align: center;
-    padding: 100px;
+    padding-bottom: 25px;
 }
 
 .heading-2{
-    color: #FFC4C4;
+    color: #FFC4D0;
     text-align: center;
-    padding: 100px;
+    padding-bottom: 40px;
 }
 
 .sidenav {
@@ -22,7 +22,7 @@ html{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #FFC4C4;
+    background-color: #FBE8E7;
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -30,6 +30,7 @@ html{
   .sidenav a {
     display: block;
     color: #EE6983;
+    text-align: center;
     padding: 16px;
     text-decoration: none;
   }
