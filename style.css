@@ -1,16 +1,40 @@
 html{
-    background-color: #300035;
-    font-family: "Bitter", sans-serif;
+    background-color: #FFF5E4;
+    font-family: "Open Sans", sans-serif;
 }
 
 .heading-1{
-    color: white;
+    color: #EE6983;
     text-align: center;
     padding: 100px;
 }
 
-.main-body{
-    background-color: #57015e;
-    padding: 10px;
-    border-radius: 50px;
+.heading-2{
+    color: #FFC4C4;
+    text-align: center;
+    padding: 100px;
 }
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFC4C4;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidenav a {
+    display: block;
+    color: #EE6983;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Page content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }
