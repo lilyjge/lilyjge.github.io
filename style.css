@@ -1,3 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.main{
+  flex: 75%;
+}
+
 html{
     background-color: #FCF5EE;
     font-family: "Archivo", sans-serif;
@@ -35,6 +48,7 @@ html{
 }
 
 .sidenav {
+    flex:25%;
     height: 100%;
     width: 25%;
     position: fixed;
