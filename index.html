@@ -1,61 +1,220 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    
+<html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
         <link rel="stylesheet" href="style.css" />
-        <script src="myscript.js"></script>
-        <title>Yijun</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="flower-plant-icon.svg">
+        <script src="https://kit.fontawesome.com/db91c8bc5a.js" crossorigin="anonymous"></script>
+        <title>Yijun Ge</title>
     </head>
-
-    <style>
-        body {
-          font-family: "Archivo", sans-serif;
-        }
-    </style>
-
     <body>
-        <div class="row">
-        <div id="mySidenav" class="sidenav">
-            <h1 class="heading-1">
-                Lily Ge
-            </h1>
-            <h2 class="heading-2">
-                Yijun
-            </h2>
-            <br>
-
-            <div>
-                <a href="index.html">Home</a>
-                <a href="contests.html">Contests</a>
-                <a href="experiences.html">Experiences</a>
-                <a href="hobbies.html">Hobbies</a>
+        <div class="page">
+            <div class="toggle" id="disnav"><i class="fa-solid fa-bars"></i></div>
+            <div class="navbar" id="nav">
+                <div class="fixed">
+                    <div class="headings">
+                        <h1 class="heading-1">
+                            Lily Ge
+                        </h1>
+                        <h2 class="heading-2">
+                            Yijun
+                        </h2>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#home">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contests">Contests</a></li>
+                            <li><a href="#experiences">Experiences</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/in/lily-ge-b7842b24a/">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discordapp.com/users/762676005768527933/">
+                                    <i class="fa-brands fa-discord"></i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/lilyjge">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/lilyyjg/">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main" id="main">
+                <div class="home" id="home">
+                    <h1 class="heading-1">
+                        About
+                    </h1>
+                    <div class="homep">
+                        <p class="text">
+                            Hello~ <br> 
+                            My name is Lily Ge. I'm a grade 12 student at Abbey Park High School, in Oakville, Ontario. 
+                            I like programming and I want to develop something that can help the world one day. 
+                            Here are some things I've done so far.
+                        </p>
+                    </div>
+                </div>
+                <div class="projects" id="projects">
+                    <h1 class="heading-1">
+                        Projects
+                    </h1>
+                    <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">Arrows Game</h2>
+                            <div class="projdescrip">
+                                <p>This was the first game I made by myself, without following a full tutorial. I used the Unity game engine with C# and free assets I found online. The player controls a character in a box from a top-down perspective and must avoid arrows randomly shooting from all four directions, dying if hit. There’s a score function counting how long the player survives and keeping track of the highest score achieved. The development process was rather a struggle and there are many areas that can be improved upon, which I will keep in mind for future games.</p>
+                            </div>
+                            <a class="toproj" href="https://github.com/lilyjge/ArrowsGame">
+                                View >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="arrows.png">
+                        </div>
+                    </div>
+                    <p class="text">...More coming soon!</p>
+                </div>
+                <div class="contests" id="contests">
+                    <h1 class="heading-1">
+                        Contests
+                    </h1>
+                    <ul class="text" id="scores">
+                        <li>2023 CSMC: 50 (honour roll) </li>
+                        <li>2023 Euclid: 84 (honour roll) </li>
+                        <li>2023 Fermat: 124 (honour roll) </li>
+                        <li>2023 COMC: 59 (top decile) </li>
+                        <li>2023 AMC 12: 105 (AIME qualification) </li> 
+                        <li>2024 CCC Senior: 45 (honour roll) </li>
+                        <li>USACO: Silver </li>   
+                     </ul>
+                     <p class="text">
+                        *All honour rolls appear with the name 'Yijun Ge'.
+                     </p>
+                </div>
+                <div class="experiences" id="experiences">
+                    <h1 class="heading-1">
+                        Experiences
+                    </h1>
+                    <h2 class="heading-3">High School Clubs</h2>
+                    <div class="column">
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Math Society Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2020 September - 2024 June</p>
+                                    <p class="clubdescrip">Math Society is a club at Abbey Park that inspires interest in math and teaches members fun math topics outside of the curriculum, especially those that may be useful in competitive math. I joined in grade 9 as a member and became an executive in grade 11. Every week, we executives prepare a lesson on some concept with practice problems and present it at the meeting.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Debate Team Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2020 September - 2024 June</p>
+                                    <p class="clubdescrip">I have been part of the debate team since grade 9 and became an executive in grade 12. I learned debate from scratch and have improved significantly over time. Initially, I practiced and participated in in-house rounds before going to tournaments, and as an executive, I helped host meetings, conduct activities, teach strategies, judge in-house rounds, and provide feedback.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Link Crew</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 May - 2024 June</p>
+                                    <p class="clubdescrip">Link Crew is a school program where senior students help grade 9s adapt to high school. Before the start of the school year, we attend training sessions where we learn strategies to help grade 9s feel welcome and comfortable. Link leaders are put into pairs and each pair is given ten grade 9s. We lead orientation on the first day of school in September, introducing our grade 9s to the school and providing important advice.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Programming Club Co-President</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 September - 2024 June</p>
+                                    <p class="clubdescrip">The Programming Club at Abbey Park has covered a wide range of topics, such as algorithms, web development, and game design. I joined as a member in grade 11 and became the co-president in grade 12. I have organized meetings, prepared and introduced content, taught algorithms, answered questions, and helped with advertising.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">East Asian Student Association Co-Founder and Co-President</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 December - 2024 June</p>
+                                    <p class="clubdescrip">I co-founded this cultural association with my friend in grade 11, initially to help with the team organizing the school’s Lunar New Year Show. Our regular meetings consist of informative, interactive, and interesting content and activities related to East Asian culture. We had a large stand at our school's Spring Fling in May 2023, where we sold traditional food and crafts, and offered free hairstyling and face painting in traditional styles. For 2024, we fully took over the planning of the Lunar New Year Show and hosted an excellent event with more than 200 attendees, a delicious potluck, and various interactive activities, connecting the local East Asian community in celebrating the traditional holiday.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Eagle Ink Editor</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2021 September - 2024 February</p>
+                                    <p class="clubdescrip">Eagle Ink is Abbey Park's very own journal, for which I am an editor. It publishes two issues per year, all written, edited, and designed by students. I attended seminars and learned the editing process, which I now apply proficiently. I edit and polish articles regularly before publication.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h2 class="heading-3">Volunteering</h2>
+                    <div class="column">
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">FOCUS Youth Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2021 August - 2023 April</p>
+                                    <p class="clubdescrip">FOCUS Youth is a registered charity in Canada. I started as the treasurer for the Oakville branch, then became the vice president of the tutoring department, which my team and I built up completely. I wrote the policies for students and tutors, created forms, and helped develop the website.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Abbey Park MEDLIFE Committee Member</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 September - 2024 June</p>
+                                    <p class="clubdescrip">MEDLIFE is a non-profit focused on helping to provide healthcare, education, and other forms of basic infrastructure to developing countries. I was a member of the fundraising committee. I regularly attended meetings and played a major role in organizing fundraisers, such as Candy-grams at Halloween and a bubble tea sale. I volunteered at the fundraisers as well, offering friendly and efficient customer service. We raised several hundred dollars.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h2 class="heading-3">Programs</h2>
+                    <div class="column">
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">SHAD</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2023 July</p>
+                                    <p class="clubdescrip">In the summer between grade 11 and grade 12, I attended the month-long Shad program at Dalhousie University. It was an extremely valuable experience, consisting of a large variety of lectures, workshops, engineering challenges, interactive activities, field trips, a design project, and more. I learned a lot and formed strong connections with the other students and staff there.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Lloyd Auckland Invitational Mathematics Workshop</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2023 June</p>
+                                    <p class="clubdescrip">The Lloyd Auckland Invitational Mathematics Workshop is a week-long workshop hosted by the University of Waterloo. There were about 70 students there, all very interesting and talented. We attended math lectures and practiced math problems every day, with a few additional activities, such as a computer science seminar and a tour of an observatory. It was very eye-opening.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
             </div>
         </div>
-
-        
-
-        <div id="main" style="margin-left:25%;">
-            <h1 class="heading-1" id="home">
-                Home
-            </h1>
-            <div>                
-                <div class="row" style="padding-left: 3%;">
-                    <img src="photos/b2.jpg" style="padding-left:5px" width="25%">
-                    <img src="photos/b1.jpg" style="padding-left:5px" width="25%">
-                    <img src="photos/b3.jpg" style="padding-left:5px" width="45%">
-                </div>
-                <div class="row" style="padding-left: 3%; padding-top: 5px">
-                    <img src="photos/b5.jpg" style="padding-left:3%" width="45%">
-                    <img src="photos/b4.jpg" style="padding-left:5px" width="45%">
-                </div>
-            <div>
-            <p class="text" style="text-align: center;  padding-top: 25px">
-                Hello. Nice to meet you. <br> My name is Lily Ge. I'm a grade 12 student in Canada. <br>Here are some things I've done.
-            </p>
-            <br>
-        </div>
-        </div>
+        <!--
+        <script src="sakura.min.js"></script>
+        <script>
+            var sakura = new Sakura('body');
+        </script>
+        -->
     </body>
 </html>
+<script src="myscript.js"></script>
