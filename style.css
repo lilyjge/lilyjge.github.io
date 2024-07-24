@@ -352,6 +352,37 @@ body{
     border: solid 2px #FFC4D0;
 }
 
+@media screen and (min-width: 1200px){
+    .fixed{
+        width: 20%;
+    }
+
+    .navbar{
+        flex: 1;
+        font-size: larger;
+    }
+    
+    i{
+        font-size: larger;
+    }
+
+    .main{
+        flex: 4;
+        font-size: larger;
+    }
+
+    .headings{
+        margin-top: 25%;
+        margin-bottom: 15%;
+    }
+
+    .club{
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 6%;
+    }
+}
+
 @media screen and (min-width: 768px){
     .toggle{
         display: none;
