@@ -298,6 +298,7 @@ body{
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 5%;
+    padding-right: 5%;
     font-weight: bold;
 }
 
@@ -332,6 +333,46 @@ body{
 #clubtime{
     font-weight: bold;
     margin-bottom: 0.5em;
+}
+
+footer{
+    background-color: #FFC4D0;
+    margin-bottom: 0;
+    padding-left: 5%;
+    margin-top: 5%;
+    overflow: hidden;
+}
+
+.heading-4{
+    color: #EE6983;
+}
+
+footer ul {
+    list-style-type: circle;
+    margin-top: 0;
+    margin-bottom: 5%;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer ul > li{
+    display: inline-block;
+    margin-right: 10%;
+}
+
+footer li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    transition: 0.5s;
+}
+
+footer li a:hover{
+    transform: scale(1.1);
+    text-shadow: 0 0 5px rgb(255, 248, 212);
+    transform-origin: top left;
 }
 
 .toggle{
