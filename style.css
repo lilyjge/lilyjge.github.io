@@ -127,7 +127,7 @@ body{
 }
 
 .contact ul{
-    list-style-type: none;
+    list-style-type: circle;
     margin: 0;
     padding: 0;
     display: flex;
@@ -137,26 +137,21 @@ body{
 .contact li{
     margin: 0.8rem 0.5rem;
     font-size: 1.5rem;
+    display: inline-block;
 }
 
 .contact a{
     text-decoration: none;
     color: #EE6983;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: text-shadow;
-    transition-property: text-shadow;
+    display: block;
+    transition: 0.5s;
 }
 
 .contact a:hover, .contact a:focus, .contact a:active {
     color: #FFC4D0;
-    font-weight: bolder;
-    text-shadow: 0px 0px 20px rgba(255, 239, 148, 0.6);
+    transform: scale(1.1);
+    text-shadow: 0 0 5px rgb(255, 248, 212);
+    transform-origin: top left;
 }
 
 .main{
@@ -334,46 +329,6 @@ body{
 #clubtime{
     font-weight: bold;
     margin-bottom: 0.5em;
-}
-
-footer{
-    background-color: #FFC4D0;
-    margin-bottom: 0;
-    padding-left: 5%;
-    margin-top: 5%;
-    overflow: hidden;
-}
-
-.heading-4{
-    color: #EE6983;
-}
-
-footer ul {
-    list-style-type: circle;
-    margin-top: 0;
-    margin-bottom: 5%;
-    padding: 0;
-    overflow: hidden;
-}
-
-footer ul > li{
-    display: inline-block;
-    margin-right: 10%;
-}
-
-footer li a {
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    transition: 0.5s;
-}
-
-footer li a:hover{
-    transform: scale(1.1);
-    text-shadow: 0 0 5px rgb(255, 248, 212);
-    transform-origin: top left;
 }
 
 .toggle{
