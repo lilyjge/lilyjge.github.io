@@ -71,6 +71,7 @@ body{
     background: linear-gradient(-45deg, #ffd0f9, #ffecd6, #ffdde8, #ffffff);
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
+    z-index: 999;
 }
 
 .menu{
@@ -511,7 +512,7 @@ body{
     margin-left: 5%;
     padding: 1%;
     font-size: 2rem;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .toggle:hover{
@@ -622,6 +623,11 @@ body{
     }
     
     .footer {
-        height: 120px;
+        height: 80px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        left: 25%;
     }
 }
