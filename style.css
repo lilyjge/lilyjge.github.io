@@ -607,6 +607,27 @@ body{
         gap: 0.8rem;
         padding: 0 1rem;
     }
+
+    /* Mobile sidebar menu enhancements */
+    .menu li {
+        margin-top: 3rem;
+    }
+
+    .menu a {
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .contact li {
+        margin: 1.2rem 0.8rem;
+        font-size: 3rem;
+    }
+
+    .headings {
+        margin-top: 30%;
+        margin-bottom: 10%;
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 480px){
