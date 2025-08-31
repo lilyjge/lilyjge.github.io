@@ -570,10 +570,6 @@ body{
         display: flex;
         min-height: 100%;
     }
-/* 
-    .headings{
-        margin-top: auto;
-    } */
 
     .navbar{
         flex: 0;
@@ -610,7 +606,7 @@ body{
 
     /* Mobile sidebar menu enhancements */
     .menu li {
-        margin-top: 3rem;
+        margin: 3rem;
     }
 
     .menu a {
@@ -619,13 +615,12 @@ body{
     }
 
     .contact li {
-        margin: 1.2rem 0.8rem;
+        margin: 2rem 0.8rem;
         font-size: 3rem;
     }
 
     .headings {
-        margin-top: 30%;
-        margin-bottom: 10%;
+        margin-top: 10%;
         font-size: 1.5rem;
     }
 }
