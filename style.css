@@ -459,7 +459,10 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 2rem;
     text-align: left;
 }
 
