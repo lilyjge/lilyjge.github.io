@@ -217,20 +217,44 @@
                             Experiences
                         </h1>
                     </header>
+
+                    <!-- <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">AI Engineer</h2>
+                            <p class="clubdescrip" id="clubtime">Yupp AI</p>
+                            <div class="projdescrip">
+                                <p>I work on AI projects.</p>
+                            </div>
+                            <a class="toproj" href="https://yupp.ai/" target="_blank">
+                                Learn More >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/kitchener.jpg" alt="Research Assistant work environment - University of Waterloo information retrieval research">
+                        </div>
+                    </div> -->
                     
                     <div class="project">
                         <div class="projcont">
                             <h2 class="project-heading">Research Assistant</h2>
-                            <p class="clubdescrip" id="clubtime">2025 February - Present</p>
+                            <p class="clubdescrip" id="clubtime">University of Waterloo</p>
                             <div class="projdescrip">
-                                <p>I worked with <a href="https://cs.uwaterloo.ca/~jimmylin/">Professor Jimmy Lin</a> on information retrieval, contributing to popular research toolkits like Anserini and Pyserini. I improved the speed of fusing retrieval runs by up to 90x, integrated the BRIGHT benchmark, converted encoder models to ONNX, helped build a model context protocol server for Pyserini, and moved prebuilt indexes from UWaterloo servers to Hugging Face. </p>
+                                <p>I work with <a href="https://cs.uwaterloo.ca/~jimmylin/">Professor Jimmy Lin</a> on information retrieval, contributing to the popular research toolkits Anserini, Pyserini, and RankLLM. 
+                                    I integrated the BRIGHT benchmark, 
+                                    created the QuackIR library for RAG in SQL databases, 
+                                    improved the speed of fusing retrieval runs by up to 90x, 
+                                    converted encoder models to ONNX, 
+                                    built a Model Context Protocol server for Pyserini, 
+                                    migrated prebuilt indexes from the University of Waterloo servers to Hugging Face, 
+                                    and fine-tuned LMs for reranking with FIRST. 
+                                    Check out my publications for details!</p>
                             </div>
                             <a class="toproj" href="http://anserini.io/" target="_blank">
                                 Learn More >
                             </a>
                         </div>
                         <div class="projpic">
-                            <img src="images/kitchener.jpg" alt="Research Assistant work environment - University of Waterloo information retrieval research">
+                            <img src="images/kitchener.jpg" alt="Research Assistant work environment downtown Kitchener Communitech - University of Waterloo information retrieval research">
                         </div>
                     </div>
                     
@@ -343,7 +367,7 @@
                                 <span class="author">Yijun Ge</span>, <span class="author">Zijian Chen</span>, <span class="author">Jimmy Lin</span>
                             </div>
                             <div class="publication-venue">
-                                <em>EMNLP: Industry Track</em> • 2025
+                                EMNLP: Industry Track • 2025
                             </div>
                             <div class="publication-description">
                                 <p>Enterprises today are increasingly compelled to adopt dedicated vector databases for retrieval-augmented generation (RAG) in applications based on large language models (LLMs). As a potential alternative for these vector databases, we propose that organizations leverage existing relational databases for retrieval, which many have already deployed in their enterprise data lakes, thus minimizing additional complexity in their software stacks. To demonstrate the simplicity and feasibility of this approach, we present QuackIR, an information retrieval (IR) toolkit built on relational database management systems (RDBMSes), with integrations in DuckDB, SQLite, and PostgreSQL. Using QuackIR, we benchmark the sparse and dense retrieval capabilities of these popular RDBMSes and demonstrate that their effectiveness is comparable to baselines from established IR toolkits. Our results highlight the potential of relational databases as a simple option for RAG scenarios due to their established widespread usage and the easy integration of retrieval abilities. Our implementation is available at quackir.io.</p>
@@ -362,7 +386,7 @@
                                 <span class="author">Yijun Ge</span>, <span class="author">Sahel Sharifymoghaddam</span>, <span class="author">Jimmy Lin</span>
                             </div>
                             <div class="publication-venue">
-                                <em>arXiv</em> • 2025
+                                arXiv • 2025
                             </div>
                             <div class="publication-description">
                                 <p>The BRIGHT benchmark is a dataset consisting of reasoning-intensive queries over diverse domains. We explore retrieval results on BRIGHT using a range of retrieval techniques, including sparse, dense, and fusion methods, and establish reproducible baselines. We then apply listwise reranking with large language models (LLMs) to further investigate the impact of reranking on reasoning-intensive queries. These baselines are integrated into popular retrieval and reranking toolkits Anserini, Pyserini, and RankLLM, with two-click reproducibility that makes them easy to build upon and convenient for further development. While attempting to reproduce the results reported in the original BRIGHT paper, we find that the provided BM25 scores differ notably from those that we obtain using Anserini and Pyserini. We discover that this difference is due to BRIGHT's implementation of BM25, which applies BM25 on the query rather than using the standard bag-of-words approach, as in Anserini, to construct query vectors. This difference has become increasingly relevant due to the rise of longer queries, with BRIGHT's lengthy reasoning-intensive queries being a prime example, and further accentuated by the increasing usage of retrieval-augmented generation, where LLM prompts can grow to be much longer than ''traditional'' search engine queries. Our observation signifies that it may be time to reconsider BM25 approaches going forward in order to better accommodate emerging applications. To facilitate this, we integrate query-side BM25 into both Anserini and Pyserini.</p>

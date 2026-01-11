@@ -375,6 +375,10 @@ body{
     text-align: left;
 }
 
+.projcont #clubtime {
+    margin-bottom: 0;
+}
+
 .toproj{
     align-self: flex-start;
     border-radius: 15px;
@@ -477,7 +481,7 @@ body{
 .publication-authors {
     color: white;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .author {
@@ -488,7 +492,7 @@ body{
     color: white;
     margin-bottom: 1rem;
     font-size: 1rem;
-    opacity: 0.9;
+    font-weight: bold;
 }
 
 .publication-description {
