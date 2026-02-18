@@ -84,12 +84,15 @@ function fadeInWhenLoaded(img) {
 }
 gridImages.forEach(fadeInWhenLoaded);
 
-// Press D to replay the load effect (for testing when opening file directly in browser)
-document.addEventListener("keydown", function(e) {
-  if (e.key === "d" || e.key === "D") {
-    gridImages.forEach(function(img) { img.classList.remove("loaded"); });
-    gridImages.forEach(function(img, i) {
-      setTimeout(function() { img.classList.add("loaded"); }, 300 + i * 200);
-    });
-  }
-});
+// Press D to replay the load effect (only when testing locally)
+var isLocal = location.protocol === "file:" || location.hostname === "localhost" || location.hostname === "127.0.0.1";
+if (isLocal) {
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "d" || e.key === "D") {
+      gridImages.forEach(function(img) { img.classList.remove("loaded"); });
+      gridImages.forEach(function(img, i) {
+        setTimeout(function() { img.classList.add("loaded"); }, 300 + i * 200);
+      });
+    }
+  });
+}
