@@ -70,3 +70,26 @@ document.addEventListener('keydown', function(event) {
     modal.style.display = "none";
   }
 });
+
+// Smooth image load: fade in when loaded so images don't paint in from top to bottom
+var gridImages = document.querySelectorAll(".photo-grid .photo-item img");
+function fadeInWhenLoaded(img) {
+  if (img.complete && img.naturalHeight !== 0) {
+    img.classList.add("loaded");
+  } else {
+    img.addEventListener("load", function() {
+      img.classList.add("loaded");
+    });
+  }
+}
+gridImages.forEach(fadeInWhenLoaded);
+
+// Press D to replay the load effect (for testing when opening file directly in browser)
+document.addEventListener("keydown", function(e) {
+  if (e.key === "d" || e.key === "D") {
+    gridImages.forEach(function(img) { img.classList.remove("loaded"); });
+    gridImages.forEach(function(img, i) {
+      setTimeout(function() { img.classList.add("loaded"); }, 300 + i * 200);
+    });
+  }
+});
