@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lily Ge Legacy</title>
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+        
+        <!-- Favicon and Icons -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/favicon.ico">
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/db91c8bc5a.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class="page">
+            <div class="toggle" id="disnav"><i class="fa-solid fa-bars"></i></div>
+            <div class="navbar" id="nav">
+                <div class="fixed">
+                    <div class="headings">
+                        <h1 class="heading-1">
+                            Lily Ge
+                        </h1>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#home">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#experiences">Experiences</a></li>
+                            <li><a href="#publications">Publications</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/lilyjge" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/lilyyjg/" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:l2ge@uwaterloo.ca" target="_blank">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/lilyjge/" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main" id="main">
+                <main class="home" id="home">
+                    <header>
+                        <h1 class="heading-1">
+                            About
+                        </h1>
+                    </header>
+                    <div class="homep">
+                        <p class="text">
+                            Hello! My name is Lily Ge. <br>
+                            This is the legacy version of my website~
+                        </p>
+                    </div>
+                    <div class="photo-grid">
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo2.jpg" alt="Lily Ge - Software Engineering student at University of Waterloo">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo4.jpg" alt="Lily Ge - Portfolio photo showcasing professional profile">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo3.jpg" alt="Lily Ge - University of Waterloo student and researcher">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo7.jpg" alt="Lily Ge - AI and information retrieval researcher">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo5.jpg" alt="Lily Ge - Software developer and computer science student">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo6.jpg" alt="Lily Ge - Technology enthusiast and programmer">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo8.jpg" alt="Lily Ge - Academic and research professional">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo1.jpg" alt="Lily Ge - Student leader and software engineer">
+                        </div>
+                        <div class="photo-item" onclick="openModal(this)">
+                            <img src="images/photo9.jpg" alt="Lily Ge - Portfolio gallery showcasing personal and professional journey">
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for enlarged photos -->
+                    <div id="photoModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="modalImg">
+                    </div>
+                </main>
+                <section class="projects" id="projects">
+                    <header>
+                        <h1 class="heading-1">
+                            Projects
+                        </h1>
+                    </header>
+                    <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">Ruth's Super Amazing AI Adventure!</h2>
+                            <div class="projdescrip">
+                                <p>This is an AI powered visual novel I created. It uses a large language model (Groq API) for dynamic conversations, LangGraph's persistence for short term memory, Pinecone's vector database and retrieval augmented generation for long term memory, and stable diffusion for live art generation. Each of the three characters have a good ending and a bad ending depending on affection level, with a common neutral ending. The true ending for each character is unlocked after obtaining her good ending and bad ending.</p>
+                            </div>
+                            <a class="toproj" href="https://github.com/lilyjge/ruth" target="_blank">
+                                View >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/ruth.png" alt="Ruth's Super Amazing AI Adventure - AI-powered visual novel interface">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">Galbs</h2>
+                            <div class="projdescrip">
+                                <p>Meet Galbs, the Artificially Intelligent Automated Companion! He was the result of our SE101 project and an absolute sweet heart that's always there for you. I wrote the modules for his mouth(speaker), eyes(camera), and ears(microphone), and also handled communication from his little simian brain(Rasberry Pi) to sentience(backend AI server) through websockets. He multitasks so you can have a smooth input/output experience with your new best friend.</p>
+                            </div>
+                            <a class="toproj" href="https://github.com/lilyjge/Galbs-AIAC" target="_blank">
+                                View >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/galbs.jpg" alt="Galbs AI Companion - Artificially Intelligent Automated Companion robot">
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">Arrows Game</h2>
+                            <div class="projdescrip">
+                                <p>This was the first game I made by myself, without following a full tutorial. I used the Unity game engine with C# and free assets I found online. The player controls a character in a box from a top-down perspective and must avoid arrows randomly shooting from all four directions, dying if hit. ThereΓÇÖs a score function counting how long the player survives and keeping track of the highest score achieved. The development process was rather a struggle and there are many areas that can be improved upon, which I will keep in mind for future games.</p>
+                            </div>
+                            <a class="toproj" href="https://github.com/lilyjge/ArrowsGame" target="_blank">
+                                View >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/arrows.png" alt="Arrows Game - Unity-based top-down survival game with arrow avoidance mechanics">
+                        </div>
+                    </div>
+                    <p class="text">...More coming soon!</p>
+                </section>
+
+                <section class="experiences" id="experiences">
+                    <header>
+                        <h1 class="heading-1">
+                            Experiences
+                        </h1>
+                    </header>
+
+                    <!-- <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">AI Engineer</h2>
+                            <p class="clubdescrip" id="clubtime">Yupp AI</p>
+                            <div class="projdescrip">
+                                <p>I work on AI projects.</p>
+                            </div>
+                            <a class="toproj" href="https://yupp.ai/" target="_blank">
+                                Learn More >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/kitchener.jpg" alt="Research Assistant work environment - University of Waterloo information retrieval research">
+                        </div>
+                    </div> -->
+                    
+                    <div class="project">
+                        <div class="projcont">
+                            <h2 class="project-heading">Research Assistant</h2>
+                            <p class="clubdescrip" id="clubtime">University of Waterloo</p>
+                            <div class="projdescrip">
+                                <p>I work with <a href="https://cs.uwaterloo.ca/~jimmylin/">Professor Jimmy Lin</a> on information retrieval, contributing to the popular research toolkits Anserini, Pyserini, and RankLLM. 
+                                    I integrated the BRIGHT benchmark, 
+                                    created the QuackIR library for RAG in SQL databases, 
+                                    improved the speed of fusing retrieval runs by up to 90x, 
+                                    converted encoder models to ONNX, 
+                                    built a Model Context Protocol server for Pyserini, 
+                                    migrated prebuilt indexes from the University of Waterloo servers to Hugging Face, 
+                                    and fine-tuned LMs for reranking with FIRST. 
+                                    Check out my publications for details!</p>
+                            </div>
+                            <a class="toproj" href="http://anserini.io/" target="_blank">
+                                Learn More >
+                            </a>
+                        </div>
+                        <div class="projpic">
+                            <img src="images/kitchener.jpg" alt="Research Assistant work environment downtown Kitchener Communitech - University of Waterloo information retrieval research">
+                        </div>
+                    </div>
+                    
+                    <h2 class="heading-3">High School Activities</h2>
+                    <div class="column">
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Math Society Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2020 September - 2024 June</p>
+                                    <p class="clubdescrip">Math Society is a club at Abbey Park that inspires interest in math and teaches members fun math topics outside of the curriculum, especially those that may be useful in competitive math. I joined in grade 9 as a member and became an executive in grade 11. Every week, we executives prepare a lesson on some concept with practice problems and present it at the meeting.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Debate Team Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2020 September - 2024 June</p>
+                                    <p class="clubdescrip">I have been part of the debate team since grade 9 and became an executive in grade 12. I learned debate from scratch and have improved significantly over time. Initially, I practiced and participated in in-house rounds before going to tournaments, and as an executive, I helped host meetings, conduct activities, teach strategies, judge in-house rounds, and provide feedback.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Link Crew</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 May - 2024 June</p>
+                                    <p class="clubdescrip">Link Crew is a school program where senior students help grade 9s adapt to high school. Before the start of the school year, we attend training sessions where we learn strategies to help grade 9s feel welcome and comfortable. Link leaders are put into pairs and each pair is given ten grade 9s. We lead orientation on the first day of school in September, introducing our grade 9s to the school and providing important advice.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">FOCUS Youth Executive</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2021 August - 2023 April</p>
+                                    <p class="clubdescrip">FOCUS Youth is a registered charity in Canada. I started as the treasurer for the Oakville branch, then became the vice president of the tutoring department, which my team and I built up completely. I wrote the policies for students and tutors, created forms, and helped develop the website.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Lloyd Auckland Invitational Mathematics Workshop</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2023 June</p>
+                                    <p class="clubdescrip">The Lloyd Auckland Invitational Mathematics Workshop is a week-long workshop hosted by the University of Waterloo. There were about 70 students there, all very interesting and talented. We attended math lectures and practiced math problems every day, with a few additional activities, such as a computer science seminar and a tour of an observatory. It was very eye-opening.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="club">
+                                <button class="collapsible">Programming Club Co-President</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 September - 2024 June</p>
+                                    <p class="clubdescrip">The Programming Club at Abbey Park has covered a wide range of topics, such as algorithms, web development, and game design. I joined as a member in grade 11 and became the co-president in grade 12. I have organized meetings, prepared and introduced content, taught algorithms, answered questions, and helped with advertising.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">East Asian Student Association Co-Founder and Co-President</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 December - 2024 June</p>
+                                    <p class="clubdescrip">I co-founded this cultural association with my friend in grade 11, initially to help with the team organizing the schoolΓÇÖs Lunar New Year Show. Our regular meetings consist of informative, interactive, and interesting content and activities related to East Asian culture. We had a large stand at our school's Spring Fling in May 2023, where we sold traditional food and crafts, and offered free hairstyling and face painting in traditional styles. For 2024, we fully took over the planning of the Lunar New Year Show and hosted an excellent event with more than 200 attendees, a delicious potluck, and various interactive activities, connecting the local East Asian community in celebrating the traditional holiday.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Eagle Ink Editor</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2021 September - 2024 February</p>
+                                    <p class="clubdescrip">Eagle Ink is Abbey Park's very own journal, for which I am an editor. It publishes two issues per year, all written, edited, and designed by students. I attended seminars and learned the editing process, which I now apply proficiently. I edit and polish articles regularly before publication.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">Abbey Park MEDLIFE Committee Member</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2022 September - 2024 June</p>
+                                    <p class="clubdescrip">MEDLIFE is a non-profit focused on helping to provide healthcare, education, and other forms of basic infrastructure to developing countries. I was a member of the fundraising committee. I regularly attended meetings and played a major role in organizing fundraisers, such as Candy-grams at Halloween and a bubble tea sale. I volunteered at the fundraisers as well, offering friendly and efficient customer service. We raised several hundred dollars.</p>
+                                </div>
+                            </div>
+                            <div class="club">
+                                <button class="collapsible">SHAD</button>
+                                <div class="clubcontent">
+                                    <p class="clubdescrip" id="clubtime">2023 July</p>
+                                    <p class="clubdescrip">In the summer between grade 11 and grade 12, I attended the month-long Shad program at Dalhousie University. It was an extremely valuable experience, consisting of a large variety of lectures, workshops, engineering challenges, interactive activities, field trips, a design project, and more. I learned a lot and formed strong connections with the other students and staff there.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="heading-3">Contests & Awards</h2>
+                    <div class="contests-section">
+                        <ul class="text" id="scores">
+                            <li>2025 NSERC USRA</li>
+                            <li>2023 CSMC: 50 (honour roll) </li>
+                            <li>2023 Euclid: 84 (honour roll) </li>
+                            <li>2023 Fermat: 124 (honour roll) </li>
+                            <li>2023 COMC: 59 (top decile) </li>
+                            <li>2023 AMC 12: 105 (AIME qualification) </li> 
+                            <li>2024 CCC Senior: 45 (honour roll) </li>
+                            <li>USACO: Silver </li>   
+                         </ul>
+                    </div>
+                </section>
+
+                <section class="publications" id="publications">
+                    <header>
+                        <h1 class="heading-1">
+                            Publications
+                        </h1>
+                    </header>
+                    <div class="publication">
+                        <div class="pub-content">
+                            <h2 class="publication-title">QuackIR: Retrieval in DuckDB and Other Relational Database Management Systems</h2>
+                            <div class="publication-authors">
+                                <span class="author author--me">Yijun Ge</span>, <span class="author">Zijian Chen</span>, <span class="author">Jimmy Lin</span>
+                            </div>
+                            <div class="publication-venue">
+                                EMNLP: Industry Track ΓÇó 2025
+                            </div>
+                            <div class="publication-description">
+                                <p>Enterprises today are increasingly compelled to adopt dedicated vector databases for retrieval-augmented generation (RAG) in applications based on large language models (LLMs). As a potential alternative for these vector databases, we propose that organizations leverage existing relational databases for retrieval, which many have already deployed in their enterprise data lakes, thus minimizing additional complexity in their software stacks. To demonstrate the simplicity and feasibility of this approach, we present QuackIR, an information retrieval (IR) toolkit built on relational database management systems (RDBMSes), with integrations in DuckDB, SQLite, and PostgreSQL. Using QuackIR, we benchmark the sparse and dense retrieval capabilities of these popular RDBMSes and demonstrate that their effectiveness is comparable to baselines from established IR toolkits. Our results highlight the potential of relational databases as a simple option for RAG scenarios due to their established widespread usage and the easy integration of retrieval abilities. Our implementation is available at quackir.io.</p>
+                            </div>
+                            <div class="publication-links">
+                                <a class="pub-link" href="https://aclanthology.org/2025.emnlp-industry.33/" target="_blank">
+                                    Paper >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <div class="pub-content">
+                            <h2 class="publication-title">Lighting the Way for BRIGHT: Reproducible Baselines with Anserini, Pyserini, and RankLLM</h2>
+                            <div class="publication-authors">
+                                <span class="author author--me">Yijun Ge*</span>, <span class="author">Sahel Sharifymoghaddam*</span>, <span class="author">Jimmy Lin</span>
+                            </div>
+                            <div class="publication-venue">
+                                arXiv ΓÇó 2025
+                            </div>
+                            <div class="publication-description">
+                                <p>The BRIGHT benchmark is a dataset consisting of reasoning-intensive queries over diverse domains. We explore retrieval results on BRIGHT using a range of retrieval techniques, including sparse, dense, and fusion methods, and establish reproducible baselines. We then apply listwise reranking with large language models (LLMs) to further investigate the impact of reranking on reasoning-intensive queries. These baselines are integrated into popular retrieval and reranking toolkits Anserini, Pyserini, and RankLLM, with two-click reproducibility that makes them easy to build upon and convenient for further development. While attempting to reproduce the results reported in the original BRIGHT paper, we find that the provided BM25 scores differ notably from those that we obtain using Anserini and Pyserini. We discover that this difference is due to BRIGHT's implementation of BM25, which applies BM25 on the query rather than using the standard bag-of-words approach, as in Anserini, to construct query vectors. This difference has become increasingly relevant due to the rise of longer queries, with BRIGHT's lengthy reasoning-intensive queries being a prime example, and further accentuated by the increasing usage of retrieval-augmented generation, where LLM prompts can grow to be much longer than ''traditional'' search engine queries. Our observation signifies that it may be time to reconsider BM25 approaches going forward in order to better accommodate emerging applications. To facilitate this, we integrate query-side BM25 into both Anserini and Pyserini.</p>
+                            </div>
+                            <div class="publication-links">
+                                <a class="pub-link" href="https://arxiv.org/abs/2509.02558" target="_blank">
+                                    Paper >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="bottom-spacer"></div>
+                
+                <!-- Footer -->
+                <div class="footer">
+                    <div class="footer-image">
+                        <img src="images/footer.jpg" alt="Decorative footer background with floral design">
+                    </div>
+                    <div class="footer-text">
+                        <p>have a lovely day~</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="myscript.js"></script>
+
