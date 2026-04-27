@@ -1,0 +1,270 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-family: "Archivo", sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.3;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    min-height: 100%;
+}
+
+.heading-1 {
+    color: #312A44;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: #312A44;
+}
+
+.navbar {
+    flex: 1;
+    text-align: center;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fixed {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(136, 112, 142), rgb(215, 197, 216), rgb(166, 170, 200), rgb(216, 212, 223));
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    z-index: 999;
+}
+
+.menu {
+    margin: 2rem 0;
+    margin-bottom: auto;
+}
+
+.headings {
+    margin-top: 20%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.menu li {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.menu li::before {
+    /* content: "✦"; */
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #A6AAC8;
+    font-size: 0.8em;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.menu li:hover::before {
+    color: #312A44;
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #312A44;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+    background-color: rgba(166, 170, 200, 0.22);
+    transform: translateX(5px);
+}
+
+.menu a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #88708E;
+    height: 4px;
+    transition: right 0.3s ease-out;
+}
+
+.menu a:hover:before,
+.menu a:focus:before,
+.menu a:active:before {
+    right: 0;
+}
+
+.contact {
+    margin-top: auto;
+}
+
+.contact ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact li {
+    margin: 0.8rem 0.5rem;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #312A44;
+    display: block;
+    transition: 0.5s;
+}
+
+.contact a:hover,
+.contact a:focus,
+.contact a:active {
+    color: #A6AAC8;
+    transform: scale(1.1);
+    text-shadow: 0 0 5px rgb(218, 212, 223);
+    transform-origin: top left;
+}
+
+.main {
+    flex: 3;
+    background-color: #D7C5D8;
+}
+
+.homep {
+    width: 60%;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.toggle {
+    border-radius: 10%;
+    border: solid 2px #312A44;
+    color: #312A44;
+    background-color: #D7C5D8;
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding: 1%;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+.toggle:hover {
+    color: #A6AAC8;
+    border: solid 2px #A6AAC8;
+}
+
+@media screen and (min-width: 1280px) {
+    .fixed {
+        width: 20%;
+    }
+
+    .navbar {
+        flex: 1;
+        font-size: larger;
+    }
+
+    i {
+        font-size: larger;
+    }
+
+    .main {
+        flex: 4;
+        font-size: larger;
+    }
+
+    .headings {
+        margin-top: 25%;
+        margin-bottom: 15%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .toggle {
+        display: none;
+    }
+
+    .fixed {
+        left: 0 !important;
+    }
+
+    html {
+        overflow-y: visible !important;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .page {
+        display: flex;
+        min-height: 100%;
+    }
+
+    .navbar {
+        flex: 0;
+    }
+
+    .fixed {
+        width: 100%;
+        left: -100%;
+        transition: all 0.5s ease;
+        margin-bottom: auto;
+    }
+
+    .menu li {
+        margin: 3rem;
+    }
+
+    .menu a {
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .contact li {
+        margin: 2rem 0.8rem;
+        font-size: 3rem;
+    }
+
+    .headings {
+        margin-top: 10%;
+        font-size: 1.5rem;
+    }
+}
