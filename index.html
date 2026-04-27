@@ -22,39 +22,34 @@
             <div class="toggle" id="disnav"><i class="fa-solid fa-bars"></i></div>
             <div class="navbar" id="nav">
                 <div class="fixed">
-                    <div class="headings">
-                        <h1 class="heading-1">
-                            Lily Ge
-                        </h1>
-                    </div>
                     <div class="menu">
                         <ul>
                             <li><a href="#home">About</a></li>
-                            <li><a href="#projects">Projects</a></li>
                             <li><a href="#experiences">Experiences</a></li>
                             <li><a href="#publications">Publications</a></li>
+                            <li><a href="#projects">Projects</a></li>
                         </ul>
                     </div>
                     <div class="contact">
                         <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/in/lilyjge/" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
                             <li>
                                 <a href="https://github.com/lilyjge" target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/lilyyjg/" target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
+                                <a href="https://x.com/lilyjge" target="_blank">
+                                    <i class="fa-brands fa-x-twitter"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:l2ge@uwaterloo.ca" target="_blank">
                                     <i class="fa-solid fa-envelope"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/lilyjge/" target="_blank">
-                                    <i class="fa-brands fa-linkedin"></i>
                                 </a>
                             </li>
                         </ul>
@@ -65,13 +60,69 @@
                 <main class="home" id="home">
                     <header>
                         <h1 class="heading-1">
-                            About
+                            Lily Ge
                         </h1>
                     </header>
                     <div class="homep">
                         <p class="text">
-                            Hello! My name is Lily Ge. <br>
+                            Hello! I'm a Software Engineering student at the University of Waterloo.
+                            My interests lie in Natural Language Processing (NLP), Information Retrieval (IR), Agentic Systems, and Robots.
+                            I am fortunate to be advised by <a href="https://cs.uwaterloo.ca/~jimmylin/" target="_blank">Professor Jimmy Lin</a>.
+                        </p>
                     </div>
+                    <section class="section" id="experiences">
+                        <h2 class="section-title">Experiences</h2>
+
+                        <article class="experience-item">
+                            <div class="experience-head">
+                                <h3>Research Assistant</h3>
+                                <p class="experience-meta"><a href="https://uwaterloo.ca/data-systems-group/" target="_blank">University of Waterloo</a> · Feb 2025 - Present · Waterloo, ON</p>
+                            </div>
+                            <p class="experience-summary">
+                                I contribute to IR research infrastructure through <a href="https://anserini.io" target="_blank">Anserini</a>, <a href="https://pyserini.io" target="_blank">Pyserini</a>, and <a href="https://rankllm.ai" target="_blank">RankLLM</a>, and led <a href="https://quackir.io" target="_blank">QuackIR</a> and <a href="https://rosaos.ai" target="_blank">rosaOS</a>.
+                            </p>
+                        </article>
+
+                        <article class="experience-item">
+                            <div class="experience-head">
+                                <h3>AI Engineer</h3>
+                                <p class="experience-meta"><a href="https://yupp.ai/" target="_blank">Yupp AI</a> · Aug 2025 - Mar 2026 · San Francisco, CA</p>
+                            </div>
+                            <p class="experience-summary">I built RAG pipelines, enabled citation extraction across various model providers, and prepared data for annotation.</p>
+                        </article>
+                    </section>
+
+                    <section class="section" id="publications">
+                        <h2 class="section-title">Publications</h2>
+                        <article class="publication-item">
+                            <p class="publication-citation"><strong>Yijun Ge</strong>, Zibo Guo, Sahel Sharifymoghaddam, and Jimmy Lin. 2026. <strong>MCP Servers for Pyserini and RankLLM: Enabling Agentic Retrieval-Augmented Generation</strong>. Accepted to SIGIR 2026 (Demonstration Track).</p>
+                            <p class="publication-links">
+                                <a href="https://github.com/castorini/pyserini/blob/master/docs/usage-mcp.md" target="_blank" rel="noopener noreferrer">Code (Pyserini)</a>
+                                <a href="https://github.com/castorini/rank_llm/tree/main/src/rank_llm/server/mcp" target="_blank" rel="noopener noreferrer">Code (RankLLM)</a>
+                            </p>
+                        </article>
+                        <article class="publication-item">
+                            <p class="publication-citation">Sahel Sharifymoghaddam*, <strong>Yijun Ge</strong>*, Raghav Vasudeva, and Jimmy Lin. 2026. <strong>Lighting the Way for BRIGHT: Reproducible Baselines with Anserini, Pyserini, and RankLLM</strong>. Accepted to SIGIR 2026 (Reproducibility Track). arXiv:2509.02558.</p>
+                            <p class="publication-links">
+                                <a href="https://arxiv.org/abs/2509.02558" target="_blank" rel="noopener noreferrer">Preprint</a>
+                                <a href="https://github.com/castorini/anserini#bright-regressions" target="_blank" rel="noopener noreferrer">Code (Anserini)</a>
+                                <a href="https://castorini.github.io/pyserini/2cr/bright.html" target="_blank" rel="noopener noreferrer">Code (Pyserini)</a>
+                            </p>
+                        </article>
+                        <article class="publication-item">
+                            <p class="publication-citation"><strong>Yijun Ge</strong>, Zijian Chen, and Jimmy Lin. 2025. <strong>QuackIR: Retrieval in DuckDB and Other Relational Database Management Systems</strong>. In <em>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track</em>, pages 492-500, Suzhou (China). Association for Computational Linguistics.</p>
+                            <p class="publication-links">
+                                <a href="https://aclanthology.org/2025.emnlp-industry.33/" target="_blank" rel="noopener noreferrer">Paper</a>
+                                <a href="https://quackir.io" target="_blank" rel="noopener noreferrer">Code</a>
+                            </p>
+                        </article>
+                    </section>
+
+                    <section class="section" id="projects">
+                        <h2 class="section-title">Projects</h2>
+                        <p class="text">Coming soon.</p>
+                    </section>
+                </main>
             </div>
         </div>
     </body>
