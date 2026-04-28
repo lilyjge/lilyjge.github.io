@@ -187,12 +187,12 @@ body {
 .homep {
     width: 100%;
     max-width: 960px;
-    margin: 0 0 3rem;
+    margin: 0 auto 3rem;
     text-align: left;
 }
 
 .section {
-    margin: 2.5rem 0 3rem;
+    margin: 2.5rem auto 3rem;
     max-width: 960px;
 }
 
@@ -310,6 +310,7 @@ body {
 
 .site-footer-inner {
     max-width: 960px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
