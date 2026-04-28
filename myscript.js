@@ -1,3 +1,8 @@
+var yearEl = document.getElementById("footer-year");
+if (yearEl) {
+  yearEl.textContent = String(new Date().getFullYear());
+}
+
 var toggleDisplay = document.querySelector("#disnav");
 var fixed = document.querySelector(".fixed");
 var html = document.querySelector("html");

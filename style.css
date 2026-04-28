@@ -2,6 +2,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --text-primary: #312A44;
+    --text-muted: rgba(49, 42, 68, 0.55);
+    --link: #5c4588;
+    --link-hover: #312A44;
+    --home-inline-pad: 12%;
+    --main-bg: #D7C5D8;
+}
+
 html {
     height: 100%;
     font-family: "Archivo", sans-serif;
@@ -20,14 +29,14 @@ body {
 }
 
 .heading-1 {
-    color: #312A44;
+    color: var(--text-primary);
     text-align: center;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
 }
 
 .text {
-    color: #312A44;
+    color: var(--text-primary);
 }
 
 .navbar {
@@ -162,11 +171,17 @@ body {
 
 .main {
     flex: 3;
-    background-color: #D7C5D8;
+    background-color: var(--main-bg);
 }
 
 .home {
-    padding: 0 12%;
+    padding: 0 var(--home-inline-pad);
+    padding-bottom: 0.5rem;
+}
+
+/* Last main section: avoid stacking a large section margin with footer spacing */
+.home > .section:last-of-type {
+    margin-bottom: 1rem;
 }
 
 .homep {
@@ -182,7 +197,7 @@ body {
 }
 
 .section-title {
-    color: #312A44;
+    color: var(--text-primary);
     font-size: 1.4rem;
     margin: 0 0 1.1rem;
 }
@@ -197,19 +212,29 @@ body {
 
 .experience-head h3 {
     margin: 0;
-    color: #312A44;
+    color: var(--text-primary);
     font-size: 1.2rem;
+}
+
+.experience-head h3 a {
+    color: var(--link);
+}
+
+.experience-head h3 a:hover,
+.experience-head h3 a:focus,
+.experience-head h3 a:active {
+    color: var(--link-hover);
 }
 
 .experience-meta {
     margin: 0.25rem 0 0;
-    color: #624F60;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
 .experience-summary {
     margin: 0.75rem 0 0;
-    color: #312A44;
+    color: var(--text-primary);
     line-height: 1.5;
     font-size: 1rem;
 }
@@ -224,7 +249,7 @@ body {
 
 .publication-citation {
     margin: 0;
-    color: #312A44;
+    color: var(--text-primary);
     line-height: 1.5;
     font-size: 1rem;
 }
@@ -239,7 +264,7 @@ body {
 
 .home a {
     text-decoration: none;
-    color: #624F60;
+    color: var(--link);
     display: inline-block;
     position: relative;
     z-index: 0;
@@ -268,14 +293,77 @@ body {
 .home a:hover,
 .home a:focus,
 .home a:active {
-    color: #312A44;
+    color: var(--link-hover);
+}
+
+.publication-links a {
+    font-weight: 500;
+}
+
+.site-footer {
+    margin-top: 0.75rem;
+    padding: 1.1rem var(--home-inline-pad) 1.5rem;
+    border-top: 1px solid rgba(49, 42, 68, 0.12);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-footer-inner {
+    max-width: 960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-legacy {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--main-bg);
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    transition: color 0.45s ease;
+}
+
+.footer-legacy::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    background: #FFC4D0;
+    height: 3px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.footer-legacy:hover,
+.footer-legacy:focus-visible {
+    color: #FFC4D0;
+}
+
+.footer-legacy:hover::before,
+.footer-legacy:focus-visible::before {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .toggle {
     border-radius: 10%;
     border: solid 2px #312A44;
     color: #312A44;
-    background-color: #D7C5D8;
+    background-color: var(--main-bg);
     position: fixed;
     margin-top: 5%;
     margin-left: 5%;
