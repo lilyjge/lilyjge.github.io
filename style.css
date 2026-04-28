@@ -323,6 +323,13 @@ body {
     color: var(--text-muted);
 }
 
+.name-given {
+    font-weight: 500;
+    color: var(--text-muted);
+    font-size: 0.62em;
+    letter-spacing: 0.02em;
+}
+
 .footer-legacy {
     text-decoration: none;
     font-size: 0.85rem;

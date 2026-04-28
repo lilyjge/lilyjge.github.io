@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /legacy/
+
+Sitemap: https://lilyjge.github.io/sitemap.xml
