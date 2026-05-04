@@ -9,6 +9,8 @@
     --link-hover: #312A44;
     --home-inline-pad: 12%;
     --main-bg: #D7C5D8;
+    /* Menu icon: stable on touch (avoid hover/focus flicker to --text-primary) */
+    --toggle-icon: #88708E;
 }
 
 html {
@@ -368,21 +370,32 @@ body {
 }
 
 .toggle {
-    border-radius: 10%;
-    border: solid 2px #312A44;
-    color: #312A44;
-    background-color: var(--main-bg);
+    border: none;
+    background: transparent;
+    color: var(--toggle-icon);
     position: fixed;
-    margin-top: 5%;
-    margin-left: 5%;
-    padding: 1%;
+    margin-top: max(1rem, env(safe-area-inset-top, 0px));
+    margin-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding: 0.65rem;
     font-size: 2rem;
+    line-height: 1;
     z-index: 1000;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.toggle:hover {
+/* Touch browsers fake :hover on tap; only style hover on real pointers */
+@media (hover: hover) and (pointer: fine) {
+    .toggle:hover {
+        color: #A6AAC8;
+    }
+}
+
+.toggle:focus-visible {
     color: #A6AAC8;
-    border: solid 2px #A6AAC8;
+    outline: 2px solid rgba(49, 42, 68, 0.35);
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 @media screen and (min-width: 1280px) {
@@ -435,10 +448,27 @@ body {
         left: -100%;
         transition: all 0.5s ease;
         margin-bottom: auto;
+        padding: max(1rem, env(safe-area-inset-top, 0px)) 1.5rem
+            max(1rem, env(safe-area-inset-bottom, 0px)) 1.5rem;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu ul {
+        width: 100%;
+        max-width: 24rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .menu li {
-        margin: 3rem;
+        margin: 0.95rem 0;
+    }
+
+    .menu li:first-child {
+        margin-top: 0;
     }
 
     .menu a {
@@ -447,8 +477,8 @@ body {
     }
 
     .contact li {
-        margin: 2rem 0.8rem;
-        font-size: 3rem;
+        margin: 0.7rem 0.45rem;
+        font-size: 2.25rem;
     }
 
 }
