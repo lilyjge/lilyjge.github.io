@@ -482,3 +482,29 @@ body {
     }
 
 }
+
+/* Scroll-triggered fade-up (html.js set in <head> when scripts run) */
+html.js #main .scroll-reveal:not(.is-revealed) {
+    opacity: 0;
+    transform: translateY(0.55rem);
+}
+
+#main .scroll-reveal {
+    transition:
+        opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html.js #main .scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.js #main .scroll-reveal,
+    html.js #main .scroll-reveal:not(.is-revealed) {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

@@ -26,3 +26,44 @@ if (toggleDisplay && fixed && html) {
     });
   });
 }
+
+(function () {
+  var reveals = document.querySelectorAll("#main .scroll-reveal");
+  if (!reveals.length) return;
+
+  function revealAll() {
+    reveals.forEach(function (el) {
+      el.classList.add("is-revealed");
+    });
+  }
+
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    revealAll();
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      root: null,
+      /* Modest lead below the viewport: big enough to avoid “empty” sections and
+         a stuck footer, but not so large that the 1s animation finishes off-screen
+         when scrolling slowly. */
+      rootMargin: "0px 0px 2% 0px",
+      threshold: 0,
+    }
+  );
+
+  reveals.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
