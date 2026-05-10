@@ -30,10 +30,20 @@ if (toggleDisplay && fixed && html) {
 (function () {
   var reveals = document.querySelectorAll("#main .scroll-reveal");
   if (!reveals.length) return;
+  var staggerMs = 100;
+  var revealOrder = new Map();
+
+  reveals.forEach(function (el, index) {
+    revealOrder.set(el, index);
+  });
+
+  function revealElement(el) {
+    el.classList.add("is-revealed");
+  }
 
   function revealAll() {
     reveals.forEach(function (el) {
-      el.classList.add("is-revealed");
+      revealElement(el);
     });
   }
 
@@ -47,9 +57,19 @@ if (toggleDisplay && fixed && html) {
 
   var observer = new IntersectionObserver(
     function (entries) {
-      entries.forEach(function (entry) {
+      var intersectingEntries = entries.filter(function (entry) {
+        return entry.isIntersecting;
+      });
+
+      intersectingEntries.sort(function (a, b) {
+        return (revealOrder.get(a.target) || 0) - (revealOrder.get(b.target) || 0);
+      });
+
+      intersectingEntries.forEach(function (entry, index) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-revealed");
+        window.setTimeout(function () {
+          revealElement(entry.target);
+        }, index * staggerMs);
         observer.unobserve(entry.target);
       });
     },
