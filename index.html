@@ -62,7 +62,9 @@
         </script>
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/db91c8bc5a.js" crossorigin="anonymous"></script>
@@ -79,6 +81,7 @@
                             <li><a href="#experiences">Experiences</a></li>
                             <li><a href="#publications">Publications</a></li>
                             <li><a href="#projects">Projects</a></li>
+                            <li><a href="#writing">Writing</a></li>
                         </ul>
                     </div>
                     <div class="contact">
@@ -109,10 +112,9 @@
             </div>
             <div class="main" id="main">
                 <main class="home" id="home">
-                    <header class="scroll-reveal">
-                        <h1 class="heading-1">
-                            Lily Ge
-                        </h1>
+                    <header class="hero scroll-reveal">
+                        <h1 class="heading-1">Lily Ge</h1>
+                        <p class="hero-handle">~ se @ uwaterloo · ir &amp; nlp</p>
                     </header>
                     <div class="homep scroll-reveal">
                         <p class="text">
@@ -122,6 +124,19 @@
                             I am fortunate to be advised by <a href="https://cs.uwaterloo.ca/~jimmylin/" target="_blank">Professor Jimmy Lin</a>.
                         </p>
                     </div>
+                    <!--
+                        Update freely. Swap labels (building/reading/listening) for whatever
+                        fits — e.g. writing, thinking about, shipping, watching.
+                    -->
+                    <section class="now scroll-reveal" id="now" aria-label="Currently">
+                        <h2 class="now-title">now</h2>
+                        <ul class="now-list">
+                            <li><span class="now-key">building</span><span class="now-val">research infra at the <a href="https://uwaterloo.ca/data-systems-group/" target="_blank">Data Systems Group</a></span></li>
+                            <li><span class="now-key">reading</span><span class="now-val now-placeholder">[your latest book — author]</span></li>
+                            <li><span class="now-key">listening</span><span class="now-val now-placeholder">[your current song — artist]</span></li>
+                        </ul>
+                        <p class="now-updated">last updated <time datetime="2026-05-18">2026-05-18</time></p>
+                    </section>
                     <section class="section" id="experiences">
                         <h2 class="section-title scroll-reveal">Experiences</h2>
 
@@ -196,10 +211,31 @@
                             <p class="experience-summary">Webcam-based keyboard input from ASL hand gestures and MediaPipe gesture shortcuts for control keys, with modular AI components and real-time OpenCV video.</p>
                         </article>
                     </section>
+
+                    <section class="section" id="writing">
+                        <h2 class="section-title">Writing</h2>
+                        <p class="writing-empty">Coming soon — notes on research, projects, and whatever I'm thinking about.</p>
+                        <!--
+                            When you publish posts, replace the empty state above with a list:
+
+                            <ul class="writing-list">
+                                <li class="writing-item">
+                                    <a href="writing/post-slug.html">
+                                        <time datetime="2026-05-18" class="writing-date">2026-05-18</time>
+                                        <span class="writing-title">Post title here</span>
+                                    </a>
+                                    <p class="writing-blurb">Optional one-liner.</p>
+                                </li>
+                            </ul>
+                        -->
+                    </section>
                 </main>
                 <footer class="site-footer">
                     <div class="site-footer-inner scroll-reveal">
-                        <p>© <span id="footer-year"></span> Lily Ge</p>
+                        <div class="footer-meta">
+                            <p class="footer-signoff">~ have a lovely day ~</p>
+                            <p class="footer-copyright">© <span id="footer-year"></span> Lily Ge</p>
+                        </div>
                         <a href="/legacy/" class="footer-legacy" rel="nofollow">legacy</a>
                     </div>
                 </footer>
