@@ -19,8 +19,10 @@
     --main-bg: var(--white);
     --card-tint: rgba(215, 197, 216, 0.45);
     --card-tint-hover: rgba(215, 197, 216, 0.62);
-    --nav-tint: rgba(166, 170, 200, 0.22);
-    --nav-tint-hover: rgba(166, 170, 200, 0.32);
+    --nav-tint: rgba(136, 112, 142, 0.1);
+    --nav-tint-hover: rgba(136, 112, 142, 0.16);
+    --space-section: 3.5rem;
+    --space-card: 1.5rem;
     --accent-border: rgba(166, 170, 200, 0.55);
     --comment-slash: rgba(136, 112, 142, 0.5);
     --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -31,6 +33,7 @@
     --text-lg: 1.125rem;
     --text-xl: 1.35rem;
     --text-2xl: 2rem;
+    --text-section: 1.5rem;
     --toggle-icon: var(--plum);
 }
 
@@ -106,10 +109,11 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    background: linear-gradient(-60deg, #88708E, #D7C5D8, #A6AAC8, #E8E6F4);
+    background: linear-gradient(-60deg, #88708E, #D7C5D8, #bfcdec, #E8E6F4);
     background-size: 400% 400%;
-    animation: gradient 24s ease infinite;
+    animation: gradient 16s ease infinite;
     z-index: 999;
+    box-shadow: inset -1px 0 0 rgba(136, 112, 142, 0.12);
 }
 
 .menu {
@@ -171,11 +175,15 @@ body {
     color: var(--text-primary);
     font-weight: 500;
     background-color: var(--nav-tint-hover);
+    padding-left: 1.35rem;
 }
 
 .menu a.is-active::before {
-    content: "> ";
+    content: ">";
+    position: absolute;
+    left: 0.45rem;
     color: var(--plum);
+    font-weight: 600;
 }
 
 .contact {
@@ -222,33 +230,42 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Last main section: avoid stacking a large section margin with footer spacing */
+/* Last main section: avoid stacking section margin with footer */
 .home > .section:last-of-type {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.about {
+    max-width: 960px;
+    margin: 0 auto 3.5rem;
 }
 
 .homep {
     width: 100%;
-    max-width: 960px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto;
     text-align: left;
     font-size: var(--text-base);
     line-height: 1.6;
 }
 
 .section {
-    margin: 2.5rem auto 3rem;
+    margin: var(--space-section) auto;
     max-width: 960px;
+}
+
+.section:first-of-type {
+    margin-top: 3rem;
 }
 
 .section-title {
     font-family: var(--mono);
     color: var(--plum);
-    font-size: var(--text-lg);
+    font-size: var(--text-section);
     font-weight: 500;
     letter-spacing: 0.03em;
     text-transform: lowercase;
-    margin: 0 0 1rem;
+    margin: 0 0 1.35rem;
+    line-height: 1.25;
 }
 
 .section-title::before {
@@ -262,8 +279,12 @@ body {
     border-left: 3px solid var(--accent-border);
     border-radius: 0 6px 6px 0;
     padding: 0.85rem 1.05rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: var(--space-card);
     transition: border-left-color 0.3s ease, background 0.3s ease;
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
 }
 
 .experience-item:hover {
@@ -274,9 +295,10 @@ body {
 .experience-head h3 {
     margin: 0;
     color: var(--text-primary);
-    font-size: var(--text-lg);
+    font-family: var(--sans);
+    font-size: var(--text-base);
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 .experience-head h3 a {
@@ -310,8 +332,12 @@ body {
     border-left: 3px solid var(--accent-border);
     border-radius: 0 6px 6px 0;
     padding: 0.8rem 1.05rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-card);
     transition: border-left-color 0.3s ease, background 0.3s ease;
+}
+
+.publication-item:last-child {
+    margin-bottom: 0;
 }
 
 .publication-item:hover {
@@ -411,35 +437,18 @@ body {
     color: var(--link);
 }
 
-/* ---- Now block (lab-notebook style) ---- */
-.now {
-    max-width: 960px;
-    margin: -0.4rem auto 3rem;
-    padding: 0.6rem 1.05rem 0.6rem 1.05rem;
+/* ---- Misc / now block (lab-notebook style) ---- */
+.misc-block {
+    padding: 0.6rem 1.05rem;
     background: var(--card-tint);
     border-left: 3px solid var(--accent-border);
     border-radius: 0 6px 6px 0;
     transition: border-left-color 0.3s ease, background 0.3s ease;
 }
 
-.now:hover {
+.misc-block:hover {
     border-left-color: var(--periwinkle);
     background: var(--card-tint-hover);
-}
-
-.now-title {
-    margin: 0 0 0.55rem;
-    font-family: var(--mono);
-    font-size: var(--text-lg);
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    text-transform: lowercase;
-    color: var(--plum);
-}
-
-.now-title::before {
-    content: "// ";
-    color: var(--comment-slash);
 }
 
 .now-list {
@@ -474,75 +483,6 @@ body {
     font-style: italic;
 }
 
-.now-updated {
-    margin: 0.6rem 0 0;
-    font-family: var(--mono);
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    letter-spacing: 0.02em;
-}
-
-/* ---- Writing section ---- */
-.writing-empty {
-    margin: 0;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-.writing-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.writing-item {
-    background: var(--card-tint);
-    border: none;
-    border-left: 3px solid var(--accent-border);
-    border-radius: 0 6px 6px 0;
-    padding: 0.85rem 1.05rem;
-    margin-bottom: 0.85rem;
-    transition: border-left-color 0.3s ease, background 0.3s ease;
-}
-
-.writing-item:hover {
-    border-left-color: var(--periwinkle);
-    background: var(--card-tint-hover);
-}
-
-.writing-item > a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.3rem 0.95rem;
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.writing-date {
-    font-family: var(--mono);
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    flex: 0 0 auto;
-}
-
-.writing-title {
-    color: var(--link);
-    font-weight: 500;
-}
-
-.writing-item > a:hover .writing-title,
-.writing-item > a:focus .writing-title {
-    color: var(--link-hover);
-}
-
-.writing-blurb {
-    margin: 0.45rem 0 0;
-    color: var(--text-primary);
-    font-size: var(--text-sm);
-    line-height: 1.55;
-}
-
 @media screen and (max-width: 540px) {
     .now-list li {
         flex-direction: column;
@@ -554,8 +494,8 @@ body {
 }
 
 .site-footer {
-    margin-top: 0.75rem;
-    padding: 1.1rem var(--home-inline-pad) 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem var(--home-inline-pad) 2rem;
     border-top: 1px solid var(--hairline);
     width: 100%;
     box-sizing: border-box;
