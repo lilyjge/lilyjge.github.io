@@ -71,20 +71,29 @@ var html = document.querySelector("html");
 var navLinks = document.querySelectorAll(".menu > ul > li");
 
 if (toggleDisplay && fixed && html) {
+  function openNav() {
+    fixed.style.left = "0px";
+    toggleDisplay.setAttribute("aria-expanded", "true");
+  }
+
+  function closeNav() {
+    fixed.style.left = "-100%";
+    toggleDisplay.setAttribute("aria-expanded", "false");
+  }
+
+  toggleDisplay.setAttribute("aria-expanded", "false");
+
   toggleDisplay.addEventListener("click", function () {
     if (fixed.style.left === "0px") {
-      fixed.style.left = "-100%";
-      html.style.overflowY = "visible";
+      closeNav();
     } else {
-      fixed.style.left = "0px";
-      html.style.overflowY = "hidden";
+      openNav();
     }
   });
 
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      fixed.style.left = "-100%";
-      html.style.overflowY = "visible";
+      closeNav();
     });
   });
 }
