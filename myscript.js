@@ -3,6 +3,68 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+(function () {
+  var listeningRow = document.querySelector(".now-listening");
+  var spotifyEl = document.getElementById("spotify-now");
+  if (!listeningRow || !spotifyEl) return;
+
+  var endpoint = listeningRow.getAttribute("data-spotify-endpoint");
+  if (!endpoint) return;
+
+  function setFallback() {
+    spotifyEl.classList.add("now-placeholder");
+    spotifyEl.textContent = "[recent song unavailable]";
+  }
+
+  function renderTrack(track) {
+    if (!track || !track.title) {
+      setFallback();
+      return;
+    }
+
+    spotifyEl.classList.remove("now-placeholder");
+    spotifyEl.classList.add("spotify-track");
+    spotifyEl.textContent = "";
+
+    if (track.albumImageUrl) {
+      var img = document.createElement("img");
+      img.className = "spotify-art";
+      img.src = track.albumImageUrl;
+      img.alt = "";
+      img.loading = "lazy";
+      spotifyEl.appendChild(img);
+    }
+
+    var text = document.createElement("span");
+    text.className = "spotify-text";
+
+    var prefix = document.createElement("span");
+    prefix.className = "spotify-status";
+    prefix.textContent = track.isPlaying ? "now playing" : "recently played";
+    text.appendChild(prefix);
+
+    var title = document.createElement(track.songUrl ? "a" : "span");
+    title.className = "spotify-title";
+    title.textContent = track.title + " - " + track.artist;
+    if (track.songUrl) {
+      title.href = track.songUrl;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+    }
+    text.appendChild(title);
+
+    spotifyEl.appendChild(text);
+  }
+
+  fetch(endpoint, { headers: { Accept: "application/json" } })
+    .then(function (response) {
+      if (!response.ok) throw new Error("Spotify request failed");
+      return response.json();
+    })
+    .then(renderTrack)
+    .catch(setFallback);
+})();
+
 var toggleDisplay = document.querySelector("#disnav");
 var fixed = document.querySelector(".fixed");
 var html = document.querySelector("html");
