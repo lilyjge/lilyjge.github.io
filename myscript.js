@@ -180,27 +180,47 @@ if (toggleDisplay && fixed && html) {
     linkById[anchor.getAttribute("href").slice(1)] = anchor;
   });
 
-  var scrollOffset = 100;
-
   function setActive(id) {
     Object.keys(linkById).forEach(function (key) {
       linkById[key].classList.toggle("is-active", key === id);
     });
   }
 
-  function sectionTop(el) {
-    return el.getBoundingClientRect().top + window.scrollY;
-  }
-
   function updateActiveFromScroll() {
-    var marker = window.scrollY + scrollOffset;
-    var activeId = sections[0].id;
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    if (window.scrollY < 40) {
+      setActive(sections[0].id);
+      return;
+    }
 
-    for (var i = sections.length - 1; i >= 0; i--) {
-      if (sectionTop(sections[i].el) <= marker) {
-        activeId = sections[i].id;
-        break;
+    var distanceFromBottom =
+      document.documentElement.scrollHeight - (window.scrollY + viewportHeight);
+    var activeId = sections[0].id;
+    var activeScore = Infinity;
+    var readingLine = Math.min(Math.max(viewportHeight * 0.35, 160), 320);
+
+    sections.forEach(function (section) {
+      var rect = section.el.getBoundingClientRect();
+      var heading = section.el.querySelector(".section-title, .hero");
+      var anchorTop = heading ? heading.getBoundingClientRect().top : rect.top;
+      var score = Math.abs(anchorTop - readingLine);
+
+      if (rect.bottom < 80) {
+        score += viewportHeight;
+      } else if (rect.top > viewportHeight) {
+        score += viewportHeight * 2;
       }
+
+      if (score < activeScore) {
+        activeScore = score;
+        activeId = section.id;
+      }
+    });
+
+    if (distanceFromBottom <= 8 && activeId !== sections[sections.length - 1].id) {
+      var last = sections[sections.length - 1];
+      var lastRect = last.el.getBoundingClientRect();
+      if (lastRect.top < viewportHeight) activeId = last.id;
     }
 
     setActive(activeId);
