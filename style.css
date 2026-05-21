@@ -605,7 +605,7 @@ body {
     .spotify-status,
     .footer-signoff,
     .footer-copyright,
-    .footer-legacy {
+    .footer-webring {
         line-height: 1.35;
     }
 
@@ -627,7 +627,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
@@ -664,41 +664,34 @@ body {
     letter-spacing: 0.02em;
 }
 
-.footer-legacy {
-    text-decoration: none;
-    font-family: var(--mono);
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    display: inline-block;
-    position: relative;
-    z-index: 0;
-    transition: color 0.3s ease;
+.footer-webring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: -0.1rem;
+    border-radius: 6px;
+    opacity: 0.72;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
-.footer-legacy::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    background: var(--periwinkle);
-    height: 2px;
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.footer-legacy:hover,
-.footer-legacy:focus-visible {
-    color: var(--link);
-}
-
-.footer-legacy:hover::before,
-.footer-legacy:focus-visible::before {
+.footer-webring:hover,
+.footer-webring:focus-visible {
     opacity: 1;
-    transform: scaleX(1);
+    background-color: var(--nav-tint);
+    transform: translateY(-0.12rem);
+}
+
+.footer-webring:focus-visible {
+    outline: 2px solid rgba(46, 40, 64, 0.3);
+    outline-offset: 4px;
+}
+
+.footer-webring img {
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
 }
 
 .article-page {
