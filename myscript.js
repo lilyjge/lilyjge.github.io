@@ -69,22 +69,25 @@ var toggleDisplay = document.querySelector("#disnav");
 var fixed = document.querySelector(".fixed");
 var html = document.querySelector("html");
 var navLinks = document.querySelectorAll(".menu > ul > li");
+var themeColor = document.querySelector("meta[name='theme-color']");
 
 if (toggleDisplay && fixed && html) {
   function openNav() {
-    fixed.style.left = "0px";
+    fixed.classList.add("is-open");
     toggleDisplay.setAttribute("aria-expanded", "true");
+    if (themeColor) themeColor.setAttribute("content", "#D7C5D8");
   }
 
   function closeNav() {
-    fixed.style.left = "-100%";
+    fixed.classList.remove("is-open");
     toggleDisplay.setAttribute("aria-expanded", "false");
+    if (themeColor) themeColor.setAttribute("content", "#faf5ff");
   }
 
   toggleDisplay.setAttribute("aria-expanded", "false");
 
   toggleDisplay.addEventListener("click", function () {
-    if (fixed.style.left === "0px") {
+    if (fixed.classList.contains("is-open")) {
       closeNav();
     } else {
       openNav();

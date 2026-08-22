@@ -39,6 +39,7 @@
 
 html {
     height: 100%;
+    background-color: var(--main-bg);
     font-family: var(--sans);
     font-size: var(--text-base);
     color: var(--text-primary);
@@ -53,6 +54,7 @@ body {
     margin: 0;
     min-width: 320px;
     overflow-x: hidden;
+    background-color: var(--main-bg);
 }
 
 .page {
@@ -888,11 +890,17 @@ body {
 
     .fixed {
         width: 100%;
-        left: -100%;
-        transition: left 0.5s ease;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease-out;
+        will-change: transform;
         margin-bottom: auto;
         padding: max(1rem, env(safe-area-inset-top, 0px)) 1.5rem
             max(1rem, env(safe-area-inset-bottom, 0px)) 1.5rem;
+    }
+
+    .fixed.is-open {
+        transform: translateX(0);
     }
 
     .menu {
@@ -953,6 +961,10 @@ html.js #main .scroll-reveal.is-revealed {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     html.js #main .scroll-reveal,
     html.js #main .scroll-reveal:not(.is-revealed) {
         opacity: 1;
