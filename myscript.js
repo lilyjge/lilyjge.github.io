@@ -175,59 +175,59 @@ if (toggleDisplay && fixed && html) {
 
   if (!sections.length) return;
 
-  var linkById = {};
-  navAnchors.forEach(function (anchor) {
-    linkById[anchor.getAttribute("href").slice(1)] = anchor;
-  });
-
   function setActive(id) {
-    Object.keys(linkById).forEach(function (key) {
-      linkById[key].classList.toggle("is-active", key === id);
+    navAnchors.forEach(function (anchor) {
+      var isActive = anchor.getAttribute("href") === "#" + id;
+      anchor.classList.toggle("is-active", isActive);
+      if (isActive) {
+        anchor.setAttribute("aria-current", "location");
+      } else {
+        anchor.removeAttribute("aria-current");
+      }
     });
   }
 
   function updateActiveFromScroll() {
     var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    if (window.scrollY < 40) {
-      setActive(sections[0].id);
-      return;
-    }
-
     var distanceFromBottom =
       document.documentElement.scrollHeight - (window.scrollY + viewportHeight);
     var activeId = sections[0].id;
-    var activeScore = Infinity;
-    var readingLine = Math.min(Math.max(viewportHeight * 0.35, 160), 320);
 
+    /* The current section is the last one whose top has crossed a small
+       activation line near the top of the viewport. */
+    var activationLine = Math.min(viewportHeight * 0.25, 160);
     sections.forEach(function (section) {
-      var rect = section.el.getBoundingClientRect();
-      var heading = section.el.querySelector(".section-title, .hero");
-      var anchorTop = heading ? heading.getBoundingClientRect().top : rect.top;
-      var score = Math.abs(anchorTop - readingLine);
-
-      if (rect.bottom < 80) {
-        score += viewportHeight;
-      } else if (rect.top > viewportHeight) {
-        score += viewportHeight * 2;
-      }
-
-      if (score < activeScore) {
-        activeScore = score;
+      if (section.el.getBoundingClientRect().top <= activationLine) {
         activeId = section.id;
       }
     });
 
-    if (distanceFromBottom <= 8 && activeId !== sections[sections.length - 1].id) {
-      var last = sections[sections.length - 1];
-      var lastRect = last.el.getBoundingClientRect();
-      if (lastRect.top < viewportHeight) activeId = last.id;
+    /* The final section may not be tall enough to cross the activation line. */
+    if (distanceFromBottom <= 8) {
+      activeId = sections[sections.length - 1].id;
     }
 
     setActive(activeId);
   }
 
   var ticking = false;
+  var clickedId = null;
+  var clickScrollTimer = null;
+
+  function finishClickScroll() {
+    window.clearTimeout(clickScrollTimer);
+    clickScrollTimer = window.setTimeout(function () {
+      clickedId = null;
+      updateActiveFromScroll();
+    }, 150);
+  }
+
   function onScroll() {
+    if (clickedId) {
+      setActive(clickedId);
+      finishClickScroll();
+      return;
+    }
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(function () {
@@ -242,10 +242,9 @@ if (toggleDisplay && fixed && html) {
 
   navAnchors.forEach(function (anchor) {
     anchor.addEventListener("click", function () {
-      var id = anchor.getAttribute("href").slice(1);
-      window.setTimeout(function () {
-        setActive(id);
-      }, 80);
+      clickedId = anchor.getAttribute("href").slice(1);
+      setActive(clickedId);
+      finishClickScroll();
     });
   });
 })();
