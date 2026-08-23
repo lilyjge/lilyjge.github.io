@@ -151,10 +151,9 @@ if (toggleDisplay && fixed && html) {
     },
     {
       root: null,
-      /* Modest lead below the viewport: big enough to avoid “empty” sections and
-         a stuck footer, but not so large that the 1s animation finishes off-screen
-         when scrolling slowly. */
-      rootMargin: "0px 0px 2% 0px",
+      /* Wait until an element is slightly inside the viewport before revealing
+         it, so the fade remains visible instead of starting below the fold. */
+      rootMargin: "0px 0px -6% 0px",
       threshold: 0,
     }
   );
