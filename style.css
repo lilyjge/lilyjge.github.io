@@ -121,8 +121,25 @@ body {
     overflow-y: auto;
 }
 
+.sidebar-portrait {
+    position: relative;
+    width: clamp(7rem, 9vw, 8rem);
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+    margin: 6rem auto 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.sidebar-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .menu {
-    margin-top: auto;
+    margin-top: 2.5rem;
     margin-bottom: 0rem;
 }
 
@@ -837,30 +854,8 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-    .fixed {
-        width: 15%;
-    }
-
-    .navbar {
-        flex: 0 0 15%;
-    }
-
-    .main {
-        flex: 4;
-    }
-
     .contact li {
         font-size: 1.6rem;
-    }
-}
-
-@media screen and (min-width: 1600px) {
-    .fixed {
-        width: 14%;
-    }
-
-    .navbar {
-        flex: 0 0 14%;
     }
 }
 
@@ -869,8 +864,17 @@ body {
         display: none;
     }
 
+    .navbar {
+        flex: 0 0 clamp(14.5rem, 17vw, 16rem);
+    }
+
     .fixed {
+        width: clamp(14.5rem, 17vw, 16rem);
         left: 0 !important;
+    }
+
+    .main {
+        flex: 1;
     }
 
     html {
@@ -903,8 +907,13 @@ body {
         transform: translateX(0);
     }
 
+    .sidebar-portrait {
+        display: none;
+    }
+
     .menu {
         width: 100%;
+        margin-top: auto;
     }
 
     .menu ul {
