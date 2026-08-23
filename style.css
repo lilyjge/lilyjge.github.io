@@ -57,6 +57,11 @@ body {
     background-color: var(--main-bg);
 }
 
+html.nav-open,
+html.nav-open body {
+    background-color: var(--lavender);
+}
+
 .page {
     display: flex;
     min-height: 100%;

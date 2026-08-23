@@ -74,12 +74,14 @@ var themeColor = document.querySelector("meta[name='theme-color']");
 if (toggleDisplay && fixed && html) {
   function openNav() {
     fixed.classList.add("is-open");
+    html.classList.add("nav-open");
     toggleDisplay.setAttribute("aria-expanded", "true");
     if (themeColor) themeColor.setAttribute("content", "#D7C5D8");
   }
 
   function closeNav() {
     fixed.classList.remove("is-open");
+    html.classList.remove("nav-open");
     toggleDisplay.setAttribute("aria-expanded", "false");
     if (themeColor) themeColor.setAttribute("content", "#faf5ff");
   }
