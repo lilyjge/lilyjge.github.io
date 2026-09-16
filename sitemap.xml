@@ -7,8 +7,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lilyjge.github.io/writing/food.html</loc>
+    <loc>https://lilyjge.github.io/writing/food/food.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lilyjge.github.io/writing/stories/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lilyjge.github.io/writing/stories/the-ones-she-loved.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lilyjge.github.io/writing/stories/the-clock-and-the-doll.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lilyjge.github.io/writing/stories/little-red-wolf-killer.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

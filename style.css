@@ -493,6 +493,34 @@ html.nav-open body {
 
 .now-list li.now-writing {
     padding-top: 0.7rem;
+    align-items: flex-start;
+}
+
+.writing-list {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.writing-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.writing-entry > a {
+    justify-self: start;
+}
+
+.writing-entry time,
+.writing-date {
+    min-width: 5.25rem;
+    font-family: var(--mono);
+    font-size: var(--text-xs);
+    line-height: 1.35;
+    color: var(--text-muted);
+    text-align: right;
+    white-space: nowrap;
 }
 
 .now-key {
@@ -597,6 +625,14 @@ html.nav-open body {
 
     .now-key {
         flex: 0 0 auto;
+    }
+
+    .writing-list {
+        width: 100%;
+    }
+
+    .writing-entry {
+        gap: 0.65rem;
     }
 
     .spotify-track {
@@ -827,6 +863,53 @@ html.nav-open body {
     border-radius: 0 6px 6px 0;
     background: var(--card-tint);
     color: var(--text-muted);
+}
+
+.story-index {
+    margin: 1.8rem 0;
+    padding-left: 1.35rem;
+}
+
+.story-index li {
+    margin: 0.55rem 0;
+    padding-left: 0.15rem;
+}
+
+.story-index li::marker {
+    color: var(--plum);
+}
+
+.story-index a {
+    justify-self: start;
+    font-size: var(--text-base);
+    font-weight: 500;
+}
+
+.story-index-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.story-index time {
+    font-family: var(--mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.story-divider {
+    margin: 1.65rem 0;
+    text-align: center;
+    color: var(--comment-slash);
+    letter-spacing: 0.35em;
+}
+
+.story-loading,
+.story-error {
+    color: var(--text-muted);
+    font-style: italic;
 }
 
 .toggle {
