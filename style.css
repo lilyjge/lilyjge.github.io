@@ -498,7 +498,7 @@ html.nav-open body {
 
 .writing-list {
     display: grid;
-    gap: 0.45rem;
+    gap: 0.1rem;
 }
 
 .writing-entry {
