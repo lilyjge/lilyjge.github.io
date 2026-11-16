@@ -376,6 +376,7 @@ html.nav-open body {
 }
 
 .publication-citation {
+    display: block;
     margin: 0;
     color: var(--text-primary);
     line-height: 1.55;
@@ -388,6 +389,122 @@ html.nav-open body {
     flex-wrap: wrap;
     gap: 0.45rem 0.65rem;
     font-size: var(--text-sm);
+}
+
+.publication-summary {
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+    /* Extend the click target to the edges of the card. */
+    margin: -0.8rem -1.05rem;
+    padding: 0.8rem 1.05rem;
+    border-radius: inherit;
+}
+
+.publication-summary::-webkit-details-marker {
+    display: none;
+}
+
+.publication-summary:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+}
+
+.publication-toggle {
+    position: absolute;
+    right: 1.1rem;
+    bottom: 1.15rem;
+    display: grid;
+    place-items: center;
+    width: 0.65rem;
+    height: 0.65rem;
+    color: var(--plum);
+    transition: color 180ms ease;
+}
+
+.publication-summary .publication-links {
+    padding-right: 1.5rem;
+}
+
+/* Keep the disclosure hint available to screen readers without an extra row. */
+.publication-show,
+.publication-hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.publication-summary:hover .publication-toggle,
+.publication-summary:focus-visible .publication-toggle {
+    color: var(--link-hover);
+}
+
+.publication-chevron {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 220ms ease;
+}
+
+.publication-hide,
+.publication-item[open] .publication-show {
+    display: none;
+}
+
+.publication-item[open] .publication-hide {
+    display: inline;
+}
+
+.publication-item[open] .publication-chevron {
+    transform: translateY(2px) rotate(225deg);
+}
+
+.publication-abstract {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+    cursor: pointer;
+    line-height: 1.75;
+    font-size: var(--text-sm);
+}
+
+.publication-abstract p {
+    margin: 0 0 0.4rem;
+}
+
+.publication-abstract p:last-child {
+    margin-bottom: 0.2rem;
+}
+
+/* Native disclosure remains functional in browsers without size interpolation. */
+@supports (interpolate-size: allow-keywords) {
+    .publication-item::details-content {
+        interpolate-size: allow-keywords;
+        height: 0;
+        overflow: clip;
+        opacity: 0;
+        transition: height 260ms ease, opacity 200ms ease, content-visibility 260ms;
+        transition-behavior: allow-discrete;
+    }
+
+    .publication-item[open]::details-content {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .publication-item::details-content,
+    .publication-chevron {
+        transition: none;
+    }
 }
 
 .home a {
@@ -608,6 +725,16 @@ html.nav-open body {
 
     .publication-links {
         gap: 0.35rem 0.55rem;
+    }
+
+    .publication-summary {
+        margin: -0.78rem -0.85rem;
+        padding: 0.78rem 0.85rem;
+    }
+
+    .publication-toggle {
+        right: 0.9rem;
+        bottom: 1.13rem;
     }
 
     .misc-block {

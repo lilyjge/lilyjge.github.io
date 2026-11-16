@@ -177,80 +177,139 @@
 
                     <section class="section" id="publications">
                         <h2 class="section-title scroll-reveal">Publications</h2>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation">Neng Li*, <strong>Yijun Ge</strong>*, Xueguang Ma, and Jimmy Lin.
-                                <strong>1ShotBench: Demonstrating One-Shot Prompt Reproducibility for Autonomous Coding Agents</strong>. 
-                                <em>Proceedings of the 35th International Conference on Information and Knowledge Management (CIKM 2026)</em>, 
-                                pages 9149-9153, November 2026, Rome, Italy.</p>
-                            <p class="publication-links">
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation">Neng Li*, <strong>Yijun Ge</strong>*, Xueguang Ma, and Jimmy Lin.
+                                <strong>1ShotBench: Demonstrating One-Shot Prompt Reproducibility for Autonomous Coding Agents</strong>.
+                                <em>Proceedings of the 35th International Conference on Information and Knowledge Management (CIKM 2026)</em>,
+                                pages 9149-9153, November 2026, Rome, Italy.</span>
+                            <span class="publication-links">
                                 <a href="https://dl.acm.org/doi/10.1145/3799682.3840271" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://github.com/castorini/1shotbench" target="_blank" rel="noopener noreferrer">Code</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation">Sahel Sharifymoghaddam*, Lingwei Gu*, <strong>Yijun Ge</strong>, and Jimmy Lin.
-                                <strong>CMASS: A ClimbMix Agentic Search Suite for Evaluating Search Agents Across Heterogeneous Tasks</strong>. 
-                                <em>arXiv:2608.20317</em>, 
-                                October 2026.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://cs.uwaterloo.ca/~jimmylin/publications/Li_etal_CIKM2026.pdf -->
+                            <div class="publication-abstract">
+                                <p>The growing use of LLM agents raises a reproducibility problem: given the same task specification, different agents may follow different workflows, consume different resources, and produce varying artifacts and outcomes. We introduce the concept of One-Shot Prompt Reproducibility (1SPR): the consistency of one-shot execution across different agents given a fixed specification, without iterative human guidance. To operationalize this, we present 1ShotBench, a toolkit that repeatedly executes the same product requirement document (PRD) across isolated agent workspaces, capturing full traces, artifacts, and metadata, along with an LLM judge to evaluate results. We demonstrate a case study using software engineering tasks built around the Anserini information retrieval toolkit, though our system itself supports arbitrary tasks. 1ShotBench allows users to compare runs side by side, inspect how execution and implementation paths diverge despite a shared specification, and analyze how workflow differences relate to cost, latency, and correctness. Our central contribution is a reproducibility-oriented lens for examining agentic software development.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation">Sahel Sharifymoghaddam*, Lingwei Gu*, <strong>Yijun Ge</strong>, and Jimmy Lin.
+                                <strong>CMASS: A ClimbMix Agentic Search Suite for Evaluating Search Agents Across Heterogeneous Tasks</strong>.
+                                <em>arXiv:2608.20317</em>,
+                                October 2026.</span>
+                            <span class="publication-links">
                                 <a href="https://arxiv.org/abs/2608.20317" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://cmass.tech/" target="_blank" rel="noopener noreferrer">Resources</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation">Tz-Huan Hsu, Jheng-Hong Yang, <strong>Yijun Ge</strong>, and Jimmy Lin.
-                                <strong>Rethinking Agentic Search with Piika: Is Lexical Retrieval Sufficient?</strong> 
-                                <em>Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)</em>, 
-                                pages 1534–1550, October 2026, Budapest, Hungary.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://arxiv.org/abs/2608.20317v2 -->
+                            <div class="publication-abstract">
+                                <p>Evaluating advances in agentic search requires testing whether methods generalize across tasks and corpus scale. Changing web search services impede controlled comparisons, while small corpora assembled around benchmark questions provide a limited test of generalization.</p>
+                                <p>We introduce CMASS, the ClimbMix Agentic Search Suite, which projects three search benchmarks—BrowseComp-Plus, Total Recall QA, and DeepSearchQA—and the multi-hop question-answering dataset HotpotQA onto a shared, fixed corpus. The target, ClimbMix, is a pre-training corpus of 553M documents and approximately 400B tokens, assembled independently of the benchmark questions.</p>
+                                <p>Our projection pipeline verifies grounding, answer uniqueness, and set completeness through independent agent audits, controlled revision, and human review. The 423 questions span entity identification, multi-hop reasoning, exhaustive answer sets, and aggregation. Evaluations of three models expose substantial headroom for open-weight agents and show that high answer accuracy can coexist with incomplete evidence coverage.</p>
+                                <p>By enabling measurement of accuracy alongside evidence coverage, search effort, and closed-book performance, CMASS supports developing agents that find sufficient evidence and produce complete answers efficiently. The pipeline code and dataset are available at https://cmass.tech/.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation">Tz-Huan Hsu, Jheng-Hong Yang, <strong>Yijun Ge</strong>, and Jimmy Lin.
+                                <strong>Rethinking Agentic Search with Piika: Is Lexical Retrieval Sufficient?</strong>
+                                <em>Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)</em>,
+                                pages 1534–1550, October 2026, Budapest, Hungary.</span>
+                            <span class="publication-links">
                                 <a href="https://aclanthology.org/2026.realm-1.104/" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://piika.ai/" target="_blank" rel="noopener noreferrer">Code</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation"><strong>Yijun Ge</strong>, Zibo Guo, Sahel Sharifymoghaddam, and Jimmy Lin. 
-                                <strong>MCP Servers for Pyserini and RankLLM: Enabling Agentic Retrieval-Augmented Generation</strong>. 
-                                <em>Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2026)</em>, 
-                                pages 5156-5160, July 2026, Melbourne, Australia.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://aclanthology.org/2026.realm-1.104/ -->
+                            <div class="publication-abstract">
+                                <p>Does a lexical retriever suffice as large language models (LLMs) become more capable within an agentic search loop? We revisit this question by pairing BM25 with increasingly capable LLMs and introduce Piika, a search agent equipped with three tools for retrieving, browsing, and reading documents. On the BrowseComp-Plus benchmark, under the same GPT-5 + BM25 setup, Piika improves the accuracy from 58.3% to 74.6% while reducing cost from $400 to $95.</p>
+                                <p>Despite relying only on lexical retrieval, it also outperforms the previously reported GPT-5 + dense-retriever setup, which achieves 73.0% accuracy at $361. Piika further scales with stronger LLMs, reaching 83.1% answer accuracy and 94.7% surfaced-evidence recall with GPT-5.5. Across model families, our results show that simple lexical retrieval, coupled with capable LLMs, a lightweight harness, and an effective tool interface, can remain highly competitive with more complex retrieval systems.</p>
+                                <p>Source code and evaluation artifacts are available at https://piika.ai.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation"><strong>Yijun Ge</strong>, Zibo Guo, Sahel Sharifymoghaddam, and Jimmy Lin.
+                                <strong>MCP Servers for Pyserini and RankLLM: Enabling Agentic Retrieval-Augmented Generation</strong>.
+                                <em>Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2026)</em>,
+                                pages 5156-5160, July 2026, Melbourne, Australia.</span>
+                            <span class="publication-links">
                                 <a href="https://dl.acm.org/doi/10.1145/3805712.3808376" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://github.com/castorini/pyserini/blob/master/docs/usage-mcp.md" target="_blank" rel="noopener noreferrer">Code (Pyserini)</a>
                                 <a href="https://github.com/castorini/rank_llm/tree/main/src/rank_llm/server/mcp" target="_blank" rel="noopener noreferrer">Code (RankLLM)</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation">Sahel Sharifymoghaddam*, <strong>Yijun Ge</strong>*, Raghav Vasudeva, and Jimmy Lin. 
-                                <strong>Lighting the Way for BRIGHT: Reproducible Baselines with Anserini, Pyserini, and RankLLM</strong>. 
-                                <em>Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2026)</em>, 
-                                pages 3059-3069, July 2026, Melbourne, Australia.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://cs.uwaterloo.ca/~jimmylin/publications/Ge_etal_SIGIR2026_MCP.pdf -->
+                            <div class="publication-abstract">
+                                <p>Large language models (LLMs) increasingly rely on retrieval-augmented generation (RAG), where search results are provided as external context to improve grounding and factuality. The Model Context Protocol (MCP) is an emerging industry standard for connecting LLMs to external tools. We present MCP servers for Pyserini and RankLLM, two widely used information retrieval research toolkits, enabling their retrieval and reranking capabilities to be easily accessed by LLM agents. Our system exposes sparse and dense retrieval over prebuilt indexes, multimodal search, LLM-based reranking, and evaluation based on relevance judgments, all as tools callable by LLMs. This integration supports rapid experimentation with agentic RAG workflows and facilitates comparisons across models and clients. We demonstrate end-to-end retrieval, reranking, RAG, and multimodal search using both open-source and proprietary LLMs, bridging IR research infrastructure with LLM tool ecosystems.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation">Sahel Sharifymoghaddam*, <strong>Yijun Ge</strong>*, Raghav Vasudeva, and Jimmy Lin.
+                                <strong>Lighting the Way for BRIGHT: Reproducible Baselines with Anserini, Pyserini, and RankLLM</strong>.
+                                <em>Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2026)</em>,
+                                pages 3059-3069, July 2026, Melbourne, Australia.</span>
+                            <span class="publication-links">
                                 <a href="https://dl.acm.org/doi/10.1145/3805712.3808570" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://github.com/castorini/anserini/blob/master/docs/reproduce/from-prebuilt-indexes/bright.md" target="_blank" rel="noopener noreferrer">Code (Anserini)</a>
                                 <a href="https://castorini.github.io/pyserini/2cr/bright.html" target="_blank" rel="noopener noreferrer">Code (Pyserini)</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation"><strong>Yijun Ge</strong>*, Kushaldeep Mujral*, Karthik Nambiar, and Jimmy Lin.
-                                <strong>rosaOS: Agentic Operating System for Embodied LLMs</strong>. 
-                                <em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)</em>, 
-                                pages 473-480, July 2026, San Diego, California.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://arxiv.org/abs/2509.02558v2 -->
+                            <div class="publication-abstract">
+                                <p>Retrieval benchmarks for large language models (LLMs) should reflect the long, reasoning-intensive queries typical of retrieval-augmented generation (RAG). We present a systematic study of BRIGHT, a reasoning-focused retrieval benchmark, along with strong, reproducible reference methods integrated into Anserini, Pyserini, and RankLLM. We evaluate lexical, sparse, dense, and fusion-based retrievers, as well as LLM rerankers, under long-query settings.</p>
+                                <p>In reproducing BRIGHT's lexical baseline, we identify a key under-documented detail: query-side BM25 (BM25Q), which applies BM25 weighting to the query itself. On long, multi-sentence queries, BM25Q consistently outperforms standard BM25, making it the strongest lexical baseline for reasoning-oriented retrieval. We further audit the BRIGHT corpus, uncovering data quality issues that impact evaluation, and offer mitigation.</p>
+                                <p>Finally, we study the generalizability of BM25Q across five additional benchmarks, finding its gains largely specific to BRIGHT, while fusion with standard BM25 provides the most consistent improvements across datasets.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation"><strong>Yijun Ge</strong>*, Kushaldeep Mujral*, Karthik Nambiar, and Jimmy Lin.
+                                <strong>rosaOS: Agentic Operating System for Embodied LLMs</strong>.
+                                <em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)</em>,
+                                pages 473-480, July 2026, San Diego, California.</span>
+                            <span class="publication-links">
                                 <a href="https://aclanthology.org/2026.acl-demo.47/" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://rosaos.ai" target="_blank" rel="noopener noreferrer">Code</a>
                                 <a href="https://www.youtube.com/watch?v=gI-S28-SRi8" target="_blank" rel="noopener noreferrer">Demo</a>
-                            </p>
-                        </article>
-                        <article class="publication-item scroll-reveal">
-                            <p class="publication-citation"><strong>Yijun Ge</strong>, Zijian Chen, and Jimmy Lin. 
-                                <strong>QuackIR: Retrieval in DuckDB and Other Relational Database Management Systems</strong>. 
-                                <em>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track</em>, 
-                                pages 492-500, November 2025, Suzhou, China.</p>
-                            <p class="publication-links">
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://aclanthology.org/2026.acl-demo.47/ -->
+                            <div class="publication-abstract">
+                                <p>We present rosaOS, an open-source agentic operating system for embodied LLMs: interactive, LLM-driven agents coordinate various software tools and physical devices through a desktop companion, the Reachy Mini robot. Existing LLM–robotic systems are generally built as a tight, intertwined stack, making it difficult to switch hardware, add extra capabilities, or expand to multiple devices without bespoke integration.</p>
+                                <p>Our system aims to provide a classic OS-inspired architecture where an agentic kernel manages all task execution and mediates device access, while process agents invoke tools to perform actions. We adopt industry-standard interfaces with MCP for agentic tool-calling and ROS for robot interactions, and demonstrate rosaOS on a multi-device setup including a quadruped robot, a wheeled mobile robot, and a smart lamp, all controlled through interactions with the Reachy Mini.</p>
+                                <p>By incorporating MCP extensibility with ROS hardware interoperability, rosaOS enables a plug-and-play ecosystem for building embodied agentic systems. Our OS is available at rosaos.ai.</p>
+                            </div>
+                        </details>
+                        <details class="publication-item scroll-reveal">
+                            <summary class="publication-summary">
+                                <span class="publication-citation"><strong>Yijun Ge</strong>, Zijian Chen, and Jimmy Lin.
+                                <strong>QuackIR: Retrieval in DuckDB and Other Relational Database Management Systems</strong>.
+                                <em>Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track</em>,
+                                pages 492-500, November 2025, Suzhou, China.</span>
+                            <span class="publication-links">
                                 <a href="https://aclanthology.org/2025.emnlp-industry.33/" target="_blank" rel="noopener noreferrer">Paper</a>
                                 <a href="https://quackir.io" target="_blank" rel="noopener noreferrer">Code</a>
-                            </p>
-                        </article>
-                    </section>
+                            </span>
+                                <span class="publication-toggle"><span class="publication-show">Read abstract</span><span class="publication-hide">Hide abstract</span><span class="publication-chevron" aria-hidden="true"></span></span>
+                            </summary>
+                            <!-- Abstract saved 2026-11-15 from https://aclanthology.org/2025.emnlp-industry.33/ -->
+                            <div class="publication-abstract">
+                                <p>Enterprises today are increasingly compelled to adopt dedicated vector databases for retrieval-augmented generation (RAG) in applications based on large language models (LLMs). As a potential alternative for these vector databases, we propose that organizations leverage existing relational databases for retrieval, which many have already deployed in their enterprise data lakes, thus minimizing additional complexity in their software stacks. To demonstrate the simplicity and feasibility of this approach, we present QuackIR, an information retrieval (IR) toolkit built on relational database management systems (RDBMSes), with integrations in DuckDB, SQLite, and PostgreSQL.</p>
+                                <p>Using QuackIR, we benchmark the sparse and dense retrieval capabilities of these popular RDBMSes and demonstrate that their effectiveness is comparable to baselines from established IR toolkits. Our results highlight the potential of relational databases as a simple option for RAG scenarios due to their established widespread usage and the easy integration of retrieval abilities. Our implementation is available at quackir.io.</p>
+                            </div>
+                        </details>
+</section>
 
                     <section class="section" id="projects">
                         <h2 class="section-title scroll-reveal">Projects</h2>

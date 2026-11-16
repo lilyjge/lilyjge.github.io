@@ -3,6 +3,16 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+// The summary handles mouse and keyboard toggling natively. Also allow a
+// second click in the expanded card to close it, without interrupting selection.
+document.querySelectorAll("details.publication-item").forEach(function (card) {
+  card.addEventListener("click", function (event) {
+    if (event.target.closest("summary, a, button")) return;
+    if (window.getSelection().toString()) return;
+    card.open = !card.open;
+  });
+});
+
 (function () {
   var listeningRow = document.querySelector(".now-listening");
   var spotifyEl = document.getElementById("spotify-now");
